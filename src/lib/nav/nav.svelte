@@ -10,6 +10,6 @@
 	<div class="logs">
 		<a href="./signIn">Sign In</a>
 		<p>||</p>
-		<a href="./signUp">Sign Up</a>
+		<a href="./signup">Sign Up</a>
 	</div>
 </nav>
