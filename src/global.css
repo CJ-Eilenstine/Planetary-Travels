@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'Kodchasan';
+	src: url('/Kodchasan/Kodchasan-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Kode_Mono';
+	src: url('/Kode_Mono/static/KodeMono-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	height: 100%;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-bottom: 16px;
+}
+
+:root {
+	/* Color Var */
+	--primary-color: #304989;
+	--secondary-color: #405f9d;
+	--accent-color: #b28e62;
+	--text-color: #251e2e;
+	--background-color: #f0e9e3;
+
+	/* Font Var */
+	--Kodchasan-font: 'Kodchasan';
+	--KodeMono-font: 'Kode_Mono';
+}
