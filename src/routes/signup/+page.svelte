@@ -1,12 +1,25 @@
 <script>
 	import './signup.css';
-	import Nav from '$lib/nav/nav.svelte';
+	import { goto } from '$app/navigation';
 </script>
 
-<Nav />
-
 <div class="signUp">
-	<form>
+	<form
+		action="?/login"
+		method="POST"
+		use:enhance={() => {
+			return async (result) => {
+				if (result.type === 'success' && result.status === 200) {
+					// Handle successful sign-up, e.g.
+					goto('/');
+				} else {
+					// Handle errors, e.g., display error messages
+					const errorData = await response.json();
+					alert(`Error: ${errorData.message}`);
+				}
+			};
+		}}
+	>
 		<h1>Sign Up</h1>
 		<input type="Email" name="email" placeholder="Email" />
 		<input type="text" name="username" placeholder="Username" />

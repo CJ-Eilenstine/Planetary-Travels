@@ -1,9 +1,6 @@
 <script>
 	import './signin.css';
-	import Nav from '$lib/nav/nav.svelte';
 </script>
-
-<Nav />
 
 <div class="signIn">
 	<form>
