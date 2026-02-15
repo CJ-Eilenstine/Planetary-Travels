@@ -1,6 +1,7 @@
 <script>
 	import './signup.css';
 	import { goto } from '$app/navigation';
+	// import { authHandlers } from '../../stores/authStore';
 </script>
 
 <div class="signUp">
