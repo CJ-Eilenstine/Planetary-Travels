@@ -4,6 +4,7 @@
 	let { children } = $props();
 	import '../global.css';
 	import Nav from '$lib/nav/nav.svelte';
+	import Footer from '$lib/footer/footer.svelte';
 </script>
 
 <svelte:head>
@@ -13,3 +14,5 @@
 <Nav />
 
 {@render children()}
+
+<Footer />
