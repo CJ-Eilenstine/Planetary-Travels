@@ -1,34 +1,55 @@
 <script>
 	import './signup.css';
+	import { auth } from '$lib/firebase/firebase.client.js';
+	import { createUserWithEmailAndPassword } from 'firebase/auth';
 	import { goto } from '$app/navigation';
-	// import { authHandlers } from '../../stores/authStore';
+
+	function handleSignup(e) {
+		e.preventDefault();
+		console.log('You have signed up');
+
+		let email = document.getElementById('email-input').value;
+		let pw = document.getElementById('password-input').value;
+		let confirmPw = document.getElementById('confirm-password-input').value;
+
+		if (pw !== confirmPw) {
+			alert('Passwords do not match');
+			return;
+		}
+		let username = document.getElementById('username-input').value;
+		let dob = document.getElementById('dob-input').value;
+		let planetOrigin = document.getElementById('planet-origin-input').value;
+		let species = document.getElementById('species-input').value;
+
+		createUserWithEmailAndPassword(auth, email, pw, username, dob, planetOrigin, species)
+			.then((userCredential) => {
+				const user = userCredential.user;
+				console.log(user);
+				goto('/');
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				alert('Error Message ' + errorMessage);
+			});
+	}
 </script>
 
 <div class="signUp">
-	<form
-		action="?/login"
-		method="POST"
-		use:enhance={() => {
-			return async (result) => {
-				if (result.type === 'success' && result.status === 200) {
-					// Handle successful sign-up, e.g.
-					goto('/');
-				} else {
-					// Handle errors, e.g., display error messages
-					const errorData = await response.json();
-					alert(`Error: ${errorData.message}`);
-				}
-			};
-		}}
-	>
+	<form>
 		<h1>Sign Up</h1>
-		<input type="Email" name="email" placeholder="Email" />
-		<input type="text" name="username" placeholder="Username" />
-		<input type="Password" name="password" placeholder="Password" />
-		<input type="Password" name="confirm_password" placeholder="Confirm Password" />
-		<input type="date" name="dob" placeholder="Date of Birth" />
-		<input type="text" name="planet_origin" placeholder="Planet Origin" />
-		<input type="text" name="species" placeholder="Species" />
-		<button>Sign Up</button>
+		<input type="email" placeholder="Email" id="email-input" />
+		<input type="text" name="username" placeholder="Username" id="username-input" />
+		<input type="password" placeholder="Password" id="password-input" />
+		<input
+			type="Password"
+			name="confirm_password"
+			placeholder="Confirm Password"
+			id="confirm-password-input"
+		/>
+		<input type="date" name="dob" placeholder="Date of Birth" id="dob-input" />
+		<input type="text" name="planet_origin" placeholder="Planet Origin" id="planet-origin-input" />
+		<input type="text" name="species" placeholder="Species" id="species-input" />
+		<button on:click={handleSignup} id="createAcctBtn">Sign Up</button>
 	</form>
 </div>
