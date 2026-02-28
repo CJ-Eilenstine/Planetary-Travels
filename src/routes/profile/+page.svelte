@@ -1,4 +1,5 @@
 <script>
+	import './profile.css';
 	import { user } from '$lib/stores/authStore';
 	import { doc, getDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client';
@@ -18,8 +19,16 @@
 	});
 </script>
 
-{#if profileData}
-	<h1>Username: {profileData.username}</h1>
-	<h2>Planet: {profileData.planetOrigin}</h2>
-	<h2>Species: {profileData.species}</h2>
-{/if}
+<div class="profileMain">
+	<h1>Profile</h1>
+
+	<div class="profileCard">
+		{#if profileData}
+			<h1>Intergalactic Travel Administration</h1>
+			<h2>{profileData.username}</h2>
+			<h3>Planet: {profileData.planetOrigin}</h3>
+			<h3>Species: {profileData.species}</h3>
+			<h3>Date of Birth: {profileData.dateOfBirth}</h3>
+		{/if}
+	</div>
+</div>
