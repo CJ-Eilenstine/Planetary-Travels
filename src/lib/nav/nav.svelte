@@ -23,6 +23,7 @@
 	<div class="logs">
 		{#if $user}
 			<a href="./profile">Profile</a>
+			<p>||</p>
 			<button on:click={handleLogout}>Logout</button>
 		{:else}
 			<a href="./signin">Sign In</a>

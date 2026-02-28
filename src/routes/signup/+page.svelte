@@ -1,55 +1,71 @@
 <script>
 	import './signup.css';
 	import { auth } from '$lib/firebase/firebase.client.js';
-	import { createUserWithEmailAndPassword } from 'firebase/auth';
+	import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+	import { doc, setDoc } from 'firebase/firestore';
+	import { db } from '$lib/firebase/firebase.client.js';
 	import { goto } from '$app/navigation';
 
-	function handleSignup(e) {
-		e.preventDefault();
-		console.log('You have signed up');
+	let email = '';
+	let pw = '';
+	let username = '';
+	let confirmPw = '';
+	let dob = '';
+	let planetOrigin = '';
+	let species = '';
 
-		let email = document.getElementById('email-input').value;
-		let pw = document.getElementById('password-input').value;
-		let confirmPw = document.getElementById('confirm-password-input').value;
+	async function handleSignup(e) {
+		e.preventDefault();
 
 		if (pw !== confirmPw) {
 			alert('Passwords do not match');
 			return;
 		}
-		let username = document.getElementById('username-input').value;
-		let dob = document.getElementById('dob-input').value;
-		let planetOrigin = document.getElementById('planet-origin-input').value;
-		let species = document.getElementById('species-input').value;
 
-		createUserWithEmailAndPassword(auth, email, pw, username, dob, planetOrigin, species)
-			.then((userCredential) => {
-				const user = userCredential.user;
-				console.log(user);
-				goto('/');
-			})
-			.catch((error) => {
-				const errorCode = error.code;
-				const errorMessage = error.message;
-				alert('Error Message ' + errorMessage);
+		if (!email || !pw || !username || !dob || !planetOrigin || !species) {
+			alert('Please fill in all fields');
+			return;
+		}
+
+		try {
+			const userCredential = await createUserWithEmailAndPassword(auth, email, pw);
+			const user = userCredential.user;
+
+			await updateProfile(user, {
+				displayName: username
 			});
+
+			await setDoc(doc(db, 'users', user.uid), {
+				username,
+				email,
+				dob,
+				planetOrigin,
+				species,
+				createdAt: new Date()
+			});
+
+			goto('/profile');
+		} catch (error) {
+			alert(error.message);
+		}
 	}
 </script>
 
 <div class="signUp">
-	<form>
+	<form on:submit={handleSignup}>
 		<h1>Sign Up</h1>
-		<input type="email" placeholder="Email" id="email-input" />
-		<input type="text" name="username" placeholder="Username" id="username-input" />
-		<input type="password" placeholder="Password" id="password-input" />
+		<input bind:value={email} type="email" placeholder="Email" />
+		<input bind:value={username} type="text" name="username" placeholder="Username" />
+		<input bind:value={pw} type="password" placeholder="Password" />
 		<input
-			type="Password"
+			bind:value={confirmPw}
+			type="password"
 			name="confirm_password"
 			placeholder="Confirm Password"
-			id="confirm-password-input"
 		/>
-		<input type="date" name="dob" placeholder="Date of Birth" id="dob-input" />
-		<input type="text" name="planet_origin" placeholder="Planet Origin" id="planet-origin-input" />
-		<input type="text" name="species" placeholder="Species" id="species-input" />
-		<button on:click={handleSignup} id="createAcctBtn">Sign Up</button>
+		<input bind:value={dob} type="date" name="dob" placeholder="Date of Birth" />
+		<input bind:value={planetOrigin} type="text" name="planet_origin" placeholder="Planet Origin" />
+		<input bind:value={species} type="text" name="species" placeholder="Species" />
+		<button type="submit">Sign Up</button>
 	</form>
 </div>
