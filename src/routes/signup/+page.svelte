@@ -5,6 +5,7 @@
 	import { doc, setDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { goto } from '$app/navigation';
+	import { collection, addDoc } from 'firebase/firestore';
 
 	let email = '';
 	let pw = '';
