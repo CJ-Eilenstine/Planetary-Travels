@@ -1,0 +1,31 @@
+.browseCard {
+	background-color: var(--primary-color);
+	border-radius: 65px;
+	width: 100%;
+	max-width: 830px;
+	display: flex;
+	margin-bottom: 20px;
+
+	.image-holder {
+		background-color: var(--accent-color);
+		width: 100%;
+		max-width: 303px;
+		height: 224px;
+		border-radius: 65px;
+	}
+
+	.browseCardTextHolder {
+		padding-left: 26px;
+		color: var(--background-color);
+
+		h2 {
+			font-family: var(--KodeMono-font);
+			font-size: 38px;
+		}
+
+		p {
+			font-family: var(--Kodchasan-font);
+			font-size: 30px;
+		}
+	}
+}

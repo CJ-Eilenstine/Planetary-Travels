@@ -6,8 +6,8 @@
 <div class="browseCard">
 	<div class="image-holder"></div>
 	<div class="browseCardTextHolder">
-		<h2><code>{planetName}</code></h2>
-		<p><code>{rating}</code></p>
+		<h2>{planetName}</h2>
+		<p>{rating}</p>
 		<p>{price}</p>
 	</div>
 </div>
