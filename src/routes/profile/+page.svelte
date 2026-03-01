@@ -31,7 +31,7 @@
 					<h2>{profileData.username}</h2>
 					<h3>Planet: {profileData.planetOrigin}</h3>
 					<h3>Species: {profileData.species}</h3>
-					<h3>Date of Birth: {profileData.dateOfBirth}</h3>
+					<h3>Date of Birth: {profileData.dob}</h3>
 				</div>
 			</div>
 		{/if}
