@@ -50,12 +50,12 @@
 }
 
 .char {
-	background-color: grey;
+	background-color: white;
 	background-size: cover;
 	background-position: center;
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
+	width: 175px;
+	height: 175px;
+	border-radius: 45px;
 	margin-right: 40px;
 	margin-left: 20px;
 }
