@@ -15,17 +15,19 @@
 	}
 
 	.browseCardTextHolder {
-		padding-left: 26px;
+		padding: 21px 0 0 26px;
 		color: var(--background-color);
 
 		h2 {
 			font-family: var(--KodeMono-font);
 			font-size: 38px;
+			margin-bottom: 29px;
 		}
 
 		p {
 			font-family: var(--Kodchasan-font);
 			font-size: 30px;
+			margin-bottom: 10px;
 		}
 	}
 }
