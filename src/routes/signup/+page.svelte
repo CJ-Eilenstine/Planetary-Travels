@@ -45,7 +45,7 @@
 				createdAt: new Date()
 			});
 
-			goto('/profile');
+			goto('/character');
 		} catch (error) {
 			alert(error.message);
 		}

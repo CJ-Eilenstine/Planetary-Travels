@@ -18,6 +18,9 @@
 	<div class="mainNav">
 		<a href="/">Home</a>
 		<a href="./browse">Browse</a>
+		{#if $user}
+			<a href="./character">Character</a>
+		{/if}
 	</div>
 
 	<div class="logs">
