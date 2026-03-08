@@ -1,0 +1,46 @@
+.characterPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
+	background-color: var(--background-color);
+}
+
+.characterPage h1 {
+	font-family: var(--KodeMono-font);
+	color: var(--text-color);
+	margin-bottom: 20px;
+}
+
+.characterEditor {
+	height: 680px;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--secondary-color);
+	padding: 40px;
+	border-radius: 10px;
+	text-align: center;
+	justify-content: space-around;
+}
+
+.characterEditor h2 {
+	font-family: var(--Kodchasan-font);
+	color: var(--text-color);
+	margin-bottom: 20px;
+	font-size: 30px;
+	font-weight: 400;
+}
+
+.charEditor {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.charEditor p {
+	font-family: var(--Kodchasan-font);
+	color: var(--text-color);
+	margin-bottom: 10px;
+	font-size: 30px;
+}
