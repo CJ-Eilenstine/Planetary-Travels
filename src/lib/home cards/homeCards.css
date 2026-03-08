@@ -1,0 +1,35 @@
+.homeCard {
+	background-color: var(--primary-color);
+	border-radius: 65px;
+	width: 100%;
+	max-width: 300px;
+	display: flex;
+	flex-direction: column;
+
+	.image-holder {
+		background-color: var(--accent-color);
+		width: 100%;
+		height: 214px;
+		border-radius: 65px;
+	}
+
+	.homeCardTextHolder {
+		/* padding: 21px 0 0 26px; */
+		color: var(--background-color);
+		padding-bottom: 42px;
+
+		h2 {
+			font-family: var(--KodeMono-font);
+			font-weight: normal;
+			font-size: 32px;
+			margin: 8px 5px 15px 10px;
+		}
+
+		p {
+			font-family: var(--Kodchasan-font);
+			font-size: 24px;
+			margin-bottom: 0px;
+			margin: 0 5px 5px 10px;
+		}
+	}
+}

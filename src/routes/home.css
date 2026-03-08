@@ -1,0 +1,17 @@
+.home {
+	.banner {
+		background-color: var(--accent-color);
+		height: 329px;
+		width: 100%;
+	}
+
+	.homeCardsSection {
+		display: flex;
+		justify-content: center;
+		/* align-items: center; */
+
+		/* testing margin */
+		margin-top: 20px;
+		gap: 20px;
+	}
+}
