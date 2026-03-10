@@ -1,4 +1,6 @@
 .home {
+	background-color: var(--background-color);
+
 	.banner {
 		background-color: var(--accent-color);
 		height: 329px;

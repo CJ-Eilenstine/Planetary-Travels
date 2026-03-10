@@ -3,6 +3,8 @@
 	flex-direction: column;
 	align-items: flex-start;
 	padding: 40px;
+	min-height: 82.25vh;
+	background-color: var(--background-color);
 }
 
 .profileMain h1 {
