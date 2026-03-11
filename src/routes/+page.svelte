@@ -6,9 +6,15 @@
 
 <div class="home">
 	<div class="banner">
-		<div class="bannerText"></div>
+		<div class="bannerText">
+			<h1>The most Popular site for interplanetary travel.</h1>
+			<p>Visit new worlds today!</p>
+		</div>
 	</div>
 
+	<div class="homeCardTitleText">
+		<h2>Recommended Places to visit</h2>
+	</div>
 	<div class="homeCardsSection">
 		<HomeCard planetName={'planet1'} rating={'3.5'} price={'price'} />
 
