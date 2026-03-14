@@ -44,3 +44,53 @@
 	margin-bottom: 10px;
 	font-size: 30px;
 }
+
+.charEditor button {
+	font-family: var(--Kodchasan-font);
+	color: var(--text-color);
+	background-color: grey;
+	border: none;
+	/* padding: 5px 5px; */
+	/* border-radius: 5px; */
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+}
+
+.charEditorHair {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 15px;
+}
+
+.charEditorHead {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 15px;
+}
+.charEditorMouth {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 15px;
+}
+.charEditorEyes {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 15px;
+}
+.charEditorBody {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 15px;
+}
+.charEditorNose {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 15px;
+}
