@@ -1,5 +1,6 @@
 .home {
 	background-color: var(--background-color);
+	min-height: 88vh;
 
 	.banner {
 		background-color: var(--accent-color);
