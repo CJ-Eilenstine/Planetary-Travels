@@ -1,12 +1,15 @@
 <script>
 	import './browse.css';
 	import BrowseCard from '$lib/browse cards/browseCard.svelte';
+	let { data } = $props();
 </script>
 
 <div class="browse">
-	<BrowseCard planetName={'planet1'} rating={'3.5'} price={'price'} />
-
-	<BrowseCard planetName={'planet2'} rating={'4.5'} price={'price2'} />
-
-	<BrowseCard planetName={'planet3'} rating={'4.7'} price={'price3'} />
+	{#if data.summaries.length > 0}
+		{#each data.summaries as { slug, planetName, rating, price } (slug)}
+			<BrowseCard {planetName} {rating} {price} />
+		{/each}
+	{:else}
+		<p>Loading posts...</p>
+	{/if}
 </div>
