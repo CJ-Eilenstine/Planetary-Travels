@@ -17,21 +17,21 @@
 <nav>
 	<div class="mainNav">
 		<a href="/">Home</a>
-		<a href="./browse">Browse</a>
+		<a href="/browse">Browse</a>
 		{#if $user}
-			<a href="./character">Character</a>
+			<a href="/character">Character</a>
 		{/if}
 	</div>
 
 	<div class="logs">
 		{#if $user}
-			<a href="./profile">Profile</a>
+			<a href="/profile">Profile</a>
 			<p>||</p>
 			<button on:click={handleLogout}>Logout</button>
 		{:else}
-			<a href="./signin">Sign In</a>
+			<a href="/signin">Sign In</a>
 			<p>||</p>
-			<a href="./signup">Sign Up</a>
+			<a href="/signup">Sign Up</a>
 		{/if}
 	</div>
 </nav>
