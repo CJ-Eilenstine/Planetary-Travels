@@ -42,7 +42,7 @@
 
 		if (feature === 'mouth') {
 			const currentSrc = mouthElement.getAttribute('src');
-			const match = currentSrc.match(/eyes(\d+)\.png/);
+			const match = currentSrc.match(/mouth(\d+)\.png/);
 			if (match) {
 				let currentIndex = parseInt(match[1]);
 				if (direction === 'left') {
@@ -57,7 +57,7 @@
 			}
 		}
 
-		if (feature === 'Nose') {
+		if (feature === 'nose') {
 			const currentSrc = noseElement.getAttribute('src');
 			const match = currentSrc.match(/nose(\d+)\.png/);
 			if (match) {
@@ -77,10 +77,11 @@
 	<h1>Your Appearance</h1>
 	<div class="characterEditor">
 		<div class="char">
-			<img id="eyes" src="/src/lib/assets/character/Eyes/eyes1.png" alt="Character Eyes" />
 			<img id="hair" src="/src/lib/assets/character/Hair/hair1.png" alt="Character Hair" />
-			<img id="mouth" src="/src/lib/assets/character/Mouth/mouth1.png" alt="Character Mouth" />
+
+			<img id="eyes" src="/src/lib/assets/character/Eyes/eyes1.png" alt="Character Eyes" />
 			<img id="nose" src="/src/lib/assets/character/Nose/nose1.png" alt="Character Nose" />
+			<img id="mouth" src="/src/lib/assets/character/Mouth/mouth1.png" alt="Character Mouth" />
 		</div>
 		<h2>Click on the arrows to change your appearance.</h2>
 		<div class="charEditor">
