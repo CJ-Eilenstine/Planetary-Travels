@@ -9,11 +9,11 @@
 .characterPage h1 {
 	font-family: var(--KodeMono-font);
 	color: var(--text-color);
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .characterEditor {
-	height: 680px;
+	min-height: 400px;
 	width: 500px;
 	display: flex;
 	flex-direction: column;
@@ -28,8 +28,8 @@
 .characterEditor h2 {
 	font-family: var(--Kodchasan-font);
 	color: var(--text-color);
-	margin-bottom: 20px;
-	font-size: 30px;
+	/* margin-bottom: 10px; */
+	font-size: 26px;
 	font-weight: 400;
 }
 
@@ -41,8 +41,8 @@
 .charEditor p {
 	font-family: var(--Kodchasan-font);
 	color: var(--text-color);
-	margin-bottom: 10px;
-	font-size: 30px;
+	margin-bottom: 5px;
+	font-size: 20px;
 }
 
 .charEditor button {
@@ -93,4 +93,50 @@
 	flex-direction: row;
 	align-items: center;
 	margin: 15px;
+}
+
+.char {
+	/* position: relative; */
+	/* top: 0;
+	left: 0; */
+	height: 300px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	/* margin-bottom: 50px; */
+}
+
+.char img:nth-child(1) {
+	position: relative;
+	top: 0;
+	left: 0;
+	height: 200px;
+	max-width: 400px;
+	z-index: 71;
+}
+
+.char img:nth-child(2) {
+	position: relative;
+	height: 100px;
+	width: auto;
+	/* top: 0; */
+	/* left: 0; */
+	z-index: 61;
+}
+.char img:nth-child(3) {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 41;
+	height: 100px;
+	width: auto;
+}
+.char img:nth-child(4) {
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 51;
+	height: 100px;
+	width: auto;
 }
