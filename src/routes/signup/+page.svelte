@@ -47,7 +47,8 @@
 					eyes: 1,
 					mouth: 1,
 					nose: 1,
-					body: 1
+					body: 1,
+					clothes: 1
 				},
 				createdAt: new Date()
 			});

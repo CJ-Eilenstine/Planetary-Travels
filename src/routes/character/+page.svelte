@@ -33,6 +33,7 @@
 		const mouthElement = document.getElementById('mouth');
 		const noseElement = document.getElementById('nose');
 		const bodyElement = document.getElementById('body');
+		const clothesElement = document.getElementById('clothes');
 
 		if (feature === 'eyes') {
 			const currentSrc = eyesElement.getAttribute('src');
@@ -111,6 +112,23 @@
 				bodyElement.setAttribute('src', `/src/lib/assets/character/Body/body${currentIndex}.png`);
 			}
 		}
+
+		if (feature === 'clothes') {
+			const currentSrc = clothesElement.getAttribute('src');
+			const match = currentSrc.match(/clothes(\d+)\.png/);
+			if (match) {
+				let currentIndex = parseInt(match[1]);
+				if (direction === 'left') {
+					currentIndex = currentIndex > 1 ? currentIndex - 1 : 8;
+				} else {
+					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
+				}
+				clothesElement.setAttribute(
+					'src',
+					`/src/lib/assets/character/Clothes/clothes${currentIndex}.png`
+				);
+			}
+		}
 	}
 </script>
 
@@ -128,6 +146,7 @@
 			<img id="nose" src="/src/lib/assets/character/Nose/nose1.png" alt="Character Nose" />
 			<img id="mouth" src="/src/lib/assets/character/Mouth/mouth1.png" alt="Character Mouth" />
 			<img id="body" src="/src/lib/assets/character/Body/body1.png" alt="Body" />
+			<img id="clothes" src="/src/lib/assets/character/Clothes/clothes1.png" alt="Clothes" />
 		</div>
 		<h2>Click on the arrows to change your appearance.</h2>
 		<div class="charEditor">
@@ -136,10 +155,10 @@
 				<p>Hair</p>
 				<button on:click={() => changeAppearance('hair', 'right')}>&gt;</button>
 			</div>
-			<div class="charEditorHead">
-				<button>&lt;</button>
-				<p>Head</p>
-				<button>&gt;</button>
+			<div class="charEditorClothes">
+				<button on:click={() => changeAppearance('clothes', 'left')}>&lt;</button>
+				<p>Clothes</p>
+				<button on:click={() => changeAppearance('clothes', 'right')}>&gt;</button>
 			</div>
 			<div class="charEditorMouth">
 				<button on:click={() => changeAppearance('mouth', 'left')}>&lt;</button>
