@@ -96,7 +96,7 @@
 }
 
 .char {
-	/* position: relative; */
+	position: relative;
 	/* top: 0;
 	left: 0; */
 	height: 300px;
@@ -108,35 +108,36 @@
 }
 
 .char img:nth-child(1) {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
-	height: 200px;
-	max-width: 400px;
+	height: 300px;
+	/* max-width: 400px; */
 	z-index: 71;
 }
 
 .char img:nth-child(2) {
-	position: relative;
-	height: 100px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 300px;
 	width: auto;
-	/* top: 0; */
-	/* left: 0; */
+
 	z-index: 61;
 }
 .char img:nth-child(3) {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 41;
-	height: 100px;
+	height: 300px;
 	width: auto;
 }
 .char img:nth-child(4) {
-	position: relative;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 51;
-	height: 100px;
+	height: 300px;
 	width: auto;
 }

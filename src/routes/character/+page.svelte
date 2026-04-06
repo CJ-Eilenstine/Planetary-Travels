@@ -2,14 +2,36 @@
 	import { onMount } from 'svelte';
 	import './character.css';
 	import { get } from 'svelte/store';
+	import { auth } from '$lib/firebase/firebase.client.js';
+	import { db } from '$lib/firebase/firebase.client.js';
+	import { doc, getDoc } from 'firebase/firestore';
+	import { user } from '$lib/stores/authStore';
+
+	let profileData = null;
+
+	$: character = profileData?.characterData;
+
+	$: if ($user) {
+		loadProfile();
+	}
+
+	async function loadProfile() {
+		const docRef = doc(db, 'users', $user.uid);
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			profileData = docSnap.data();
+		}
+	}
 
 	function changeAppearance(feature, direction) {
 		console.log(`Changing ${feature} in direction: ${direction}`);
 
+		// let character = get(db.collection('users').doc(auth.currentUser.uid)).characterData;
+
 		const eyesElement = document.getElementById('eyes');
 		const hairElement = document.getElementById('hair');
 		const mouthElement = document.getElementById('mouth');
-		// const bodyElement = document.getElementById('body');
 		const noseElement = document.getElementById('nose');
 
 		if (feature === 'eyes') {
@@ -19,8 +41,10 @@
 				let currentIndex = parseInt(match[1]);
 				if (direction === 'left') {
 					currentIndex = currentIndex > 1 ? currentIndex - 1 : 8;
+					character.eyes = currentIndex;
 				} else {
 					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
+					character.eyes = currentIndex;
 				}
 				eyesElement.setAttribute('src', `/src/lib/assets/character/Eyes/eyes${currentIndex}.png`);
 			}

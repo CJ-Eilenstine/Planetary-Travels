@@ -5,18 +5,20 @@
 	import { db } from '$lib/firebase/firebase.client';
 	import { onMount } from 'svelte';
 
+	$: if ($user) {
+		loadProfile();
+	}
+
 	let profileData = null;
 
-	onMount(async () => {
-		if ($user) {
-			const docRef = doc(db, 'users', $user.uid);
-			const docSnap = await getDoc(docRef);
+	async function loadProfile() {
+		const docRef = doc(db, 'users', $user.uid);
+		const docSnap = await getDoc(docRef);
 
-			if (docSnap.exists()) {
-				profileData = docSnap.data();
-			}
+		if (docSnap.exists()) {
+			profileData = docSnap.data();
 		}
-	});
+	}
 </script>
 
 <div class="profileMain">
@@ -26,7 +28,12 @@
 		{#if profileData}
 			<h1>Intergalactic Travel Administration</h1>
 			<div class="userInfo">
-				<div class="char"></div>
+				<div class="char">
+					<img
+						src={`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes}.png`}
+						alt="Eyes"
+					/>
+				</div>
 				<div class="info">
 					<h2>{profileData.username}</h2>
 					<h3>Planet: {profileData.planetOrigin}</h3>

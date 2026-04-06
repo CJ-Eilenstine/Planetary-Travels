@@ -42,6 +42,12 @@
 				dob,
 				planetOrigin,
 				species,
+				characterData: {
+					hair: 1,
+					eyes: 1,
+					mouth: 1,
+					nose: 1
+				},
 				createdAt: new Date()
 			});
 
