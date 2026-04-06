@@ -4,16 +4,14 @@
 	import { get } from 'svelte/store';
 	import { auth } from '$lib/firebase/firebase.client.js';
 	import { db } from '$lib/firebase/firebase.client.js';
-	import { doc, getDoc } from 'firebase/firestore';
+	import { doc, getDoc, updateDoc } from 'firebase/firestore';
 	import { user } from '$lib/stores/authStore';
 
+	onMount(() => {
+		if ($user) loadProfile();
+	});
+
 	let profileData = null;
-
-	$: character = profileData?.characterData;
-
-	$: if ($user) {
-		loadProfile();
-	}
 
 	async function loadProfile() {
 		const docRef = doc(db, 'users', $user.uid);
@@ -25,14 +23,16 @@
 	}
 
 	function changeAppearance(feature, direction) {
-		console.log(`Changing ${feature} in direction: ${direction}`);
+		console.log('Loaded profile data:', profileData);
+		// console.log(`Changing ${feature} in direction: ${direction}`);
 
-		// let character = get(db.collection('users').doc(auth.currentUser.uid)).characterData;
+		// const currentIndex = profileData.characterData[feature];
 
 		const eyesElement = document.getElementById('eyes');
 		const hairElement = document.getElementById('hair');
 		const mouthElement = document.getElementById('mouth');
 		const noseElement = document.getElementById('nose');
+		const bodyElement = document.getElementById('body');
 
 		if (feature === 'eyes') {
 			const currentSrc = eyesElement.getAttribute('src');
@@ -41,13 +41,16 @@
 				let currentIndex = parseInt(match[1]);
 				if (direction === 'left') {
 					currentIndex = currentIndex > 1 ? currentIndex - 1 : 8;
-					character.eyes = currentIndex;
 				} else {
 					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
-					character.eyes = currentIndex;
 				}
 				eyesElement.setAttribute('src', `/src/lib/assets/character/Eyes/eyes${currentIndex}.png`);
 			}
+
+			// profileData.characterData.eyes = currentIndex;
+			// updateDoc(doc(db, 'users', $user.uid), {
+			// 	'characterData.eyes': currentIndex
+			// });
 		}
 
 		if (feature === 'hair') {
@@ -94,6 +97,20 @@
 				noseElement.setAttribute('src', `/src/lib/assets/character/Nose/nose${currentIndex}.png`);
 			}
 		}
+
+		if (feature === 'body') {
+			const currentSrc = bodyElement.getAttribute('src');
+			const match = currentSrc.match(/body(\d+)\.png/);
+			if (match) {
+				let currentIndex = parseInt(match[1]);
+				if (direction === 'left') {
+					currentIndex = currentIndex > 1 ? currentIndex - 1 : 13;
+				} else {
+					currentIndex = currentIndex < 13 ? currentIndex + 1 : 1;
+				}
+				bodyElement.setAttribute('src', `/src/lib/assets/character/Body/body${currentIndex}.png`);
+			}
+		}
 	}
 </script>
 
@@ -103,9 +120,14 @@
 		<div class="char">
 			<img id="hair" src="/src/lib/assets/character/Hair/hair1.png" alt="Character Hair" />
 
-			<img id="eyes" src="/src/lib/assets/character/Eyes/eyes1.png" alt="Character Eyes" />
+			<img
+				id="eyes"
+				src={`/src/lib/assets/character/Eyes/eyes${profileData?.characterData?.eyes || 1}.png`}
+				alt="Eyes"
+			/>
 			<img id="nose" src="/src/lib/assets/character/Nose/nose1.png" alt="Character Nose" />
 			<img id="mouth" src="/src/lib/assets/character/Mouth/mouth1.png" alt="Character Mouth" />
+			<img id="body" src="/src/lib/assets/character/Body/body1.png" alt="Body" />
 		</div>
 		<h2>Click on the arrows to change your appearance.</h2>
 		<div class="charEditor">
@@ -130,9 +152,9 @@
 				<button on:click={() => changeAppearance('eyes', 'right')}>&gt;</button>
 			</div>
 			<div class="charEditorBody">
-				<button>&lt;</button>
+				<button on:click={() => changeAppearance('body', 'left')}>&lt;</button>
 				<p>Body</p>
-				<button>&gt;</button>
+				<button on:click={() => changeAppearance('body', 'right')}>&gt;</button>
 			</div>
 			<div class="charEditorNose">
 				<button on:click={() => changeAppearance('nose', 'left')}>&lt;</button>

@@ -54,14 +54,18 @@
 }
 
 .char {
-	background-color: white;
-	background-size: cover;
+	/* background-color: white; */
+	/* background-size: cover;
 	background-position: center;
 	width: 175px;
 	height: 175px;
 	border-radius: 45px;
 	margin-right: 40px;
-	margin-left: 20px;
+	margin-left: 20px; */
+}
+
+.char img {
+	height: 200px;
 }
 
 .info {
