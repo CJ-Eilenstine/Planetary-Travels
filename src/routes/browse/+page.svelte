@@ -10,6 +10,6 @@
 			<BrowseCard {planetName} {rating} {price} />
 		{/each}
 	{:else}
-		<p>Loading posts...</p>
+		<p>Loading...</p>
 	{/if}
 </div>
