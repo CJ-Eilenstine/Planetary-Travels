@@ -9,6 +9,7 @@
 .characterPage h1 {
 	font-family: var(--KodeMono-font);
 	color: var(--text-color);
+	font-weight: normal;
 	margin-bottom: 10px;
 }
 
@@ -27,7 +28,7 @@
 
 .characterEditor h2 {
 	font-family: var(--Kodchasan-font);
-	color: var(--text-color);
+	color: var(--background-color);
 	/* margin-bottom: 10px; */
 	font-size: 26px;
 	font-weight: 400;
@@ -40,54 +41,33 @@
 
 .charEditor p {
 	font-family: var(--Kodchasan-font);
-	color: var(--text-color);
+	color: var(--background-color);
 	margin-bottom: 5px;
 	font-size: 20px;
 }
 
 .charEditor button {
 	font-family: var(--Kodchasan-font);
-	color: var(--text-color);
-	background-color: grey;
+	color: var(--background-color);
+	background-color: var(--primary-color);
 	border: none;
 	/* padding: 5px 5px; */
-	/* border-radius: 5px; */
+	border-radius: 10px;
 	cursor: pointer;
-	width: 20px;
-	height: 20px;
+	font-size: 30px;
+	font-weight: bold;
+	/* width: 20px;
+	height: 20px; */
+	padding: 0 10px 5px;
+	margin: 0 15px;
 }
 
-.charEditorHair {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 15px;
-}
-
-.charEditorHead {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 15px;
-}
-.charEditorMouth {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 15px;
-}
-.charEditorEyes {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 15px;
-}
-.charEditorBody {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	margin: 15px;
-}
+.charEditorHair,
+.charEditorHead,
+.charEditorClothes,
+.charEditorMouth,
+.charEditorEyes,
+.charEditorBody,
 .charEditorNose {
 	display: flex;
 	flex-direction: row;

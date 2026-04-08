@@ -15,6 +15,7 @@
 		<button>Travel Now!!!</button>
 	</div>
 	<div class="reviews">
-		<h2>Reviews</h2>
+		<h4>Reviews</h4>
+		<button>Leave a review</button>
 	</div>
 </main>

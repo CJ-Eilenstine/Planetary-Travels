@@ -181,5 +181,6 @@
 				<button on:click={() => changeAppearance('nose', 'right')}>&gt;</button>
 			</div>
 		</div>
+		<button>Save</button>
 	</div>
 </div>

@@ -22,13 +22,14 @@
 
 		h2,
 		h3 {
-			font-size: 24px;
+			font-size: 22px;
 			margin: 0;
+			font-weight: normal;
 		}
 
 		p {
 			font-size: 24px;
-			margin-top: 20px;
+			margin-top: 30px;
 		}
 
 		button {
@@ -41,7 +42,27 @@
 			font-size: 32px;
 			color: var(--background-color);
 			align-self: center;
-			margin: 40px 10px;
+			margin: 50px 10px;
+			box-shadow: 8px 8px 8px rgba(128, 128, 128, 0.661);
+		}
+	}
+
+	.reviews {
+		h4 {
+			font-size: 36px;
+			font-family: var(--Kodchasan-font);
+			font-weight: normal;
+		}
+
+		button {
+			width: 150px;
+			height: 35px;
+			background-color: var(--primary-color);
+			color: var(--background-color);
+			font-family: var(--Kodchasan-font);
+			font-size: 16px;
+			border: none;
+			border-radius: 15px;
 		}
 	}
 }
