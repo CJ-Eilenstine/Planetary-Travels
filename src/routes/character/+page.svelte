@@ -14,19 +14,20 @@
 	let profileData = null;
 
 	async function loadProfile() {
-		const docRef = doc(db, 'users', $user.uid);
-		const docSnap = await getDoc(docRef);
+		// const docRef = doc(db, 'users', $user.uid);
 
-		if (docSnap.exists()) {
-			profileData = docSnap.data();
+		const querySnapshot = await getDoc(db, 'users', $user.uid, 'characterData');
+		// const docSnap = await getDoc(querySnapshot);
+
+		if (querySnapshot.exists()) {
+			profileData = querySnapshot.data();
 		}
 	}
 
 	function changeAppearance(feature, direction) {
 		console.log('Loaded profile data:', profileData);
 		// console.log(`Changing ${feature} in direction: ${direction}`);
-
-		// const currentIndex = profileData.characterData[feature];
+		// console.log(`Current character data:`, profileData.characterData);
 
 		const eyesElement = document.getElementById('eyes');
 		const hairElement = document.getElementById('hair');
@@ -47,11 +48,6 @@
 				}
 				eyesElement.setAttribute('src', `/src/lib/assets/character/Eyes/eyes${currentIndex}.png`);
 			}
-
-			// profileData.characterData.eyes = currentIndex;
-			// updateDoc(doc(db, 'users', $user.uid), {
-			// 	'characterData.eyes': currentIndex
-			// });
 		}
 
 		if (feature === 'hair') {
@@ -130,6 +126,34 @@
 			}
 		}
 	}
+
+	function save() {
+		const eyesElement = document.getElementById('eyes');
+		const hairElement = document.getElementById('hair');
+		const mouthElement = document.getElementById('mouth');
+		const noseElement = document.getElementById('nose');
+		const bodyElement = document.getElementById('body');
+		const clothesElement = document.getElementById('clothes');
+
+		const newProfileData = {
+			characterData: {
+				eyes: parseInt(eyesElement.getAttribute('src').match(/eyes(\d+)\.png/)),
+				hair: parseInt(hairElement.getAttribute('src').match(/hair(\d+)\.png/)),
+				mouth: parseInt(mouthElement.getAttribute('src').match(/mouth(\d+)\.png/)),
+				nose: parseInt(noseElement.getAttribute('src').match(/nose(\d+)\.png/)),
+				body: parseInt(bodyElement.getAttribute('src').match(/body(\d+)\.png/)),
+				clothes: parseInt(clothesElement.getAttribute('src').match(/clothes(\d+)\.png/))
+			}
+		};
+
+		updateDoc(doc(db, 'users', $user.uid), newProfileData)
+			.then(() => {
+				console.log('Profile updated successfully!');
+			})
+			.catch((error) => {
+				console.error('Error updating profile:', error);
+			});
+	}
 </script>
 
 <div class="characterPage">
@@ -138,11 +162,8 @@
 		<div class="char">
 			<img id="hair" src="/src/lib/assets/character/Hair/hair1.png" alt="Character Hair" />
 
-			<img
-				id="eyes"
-				src={`/src/lib/assets/character/Eyes/eyes${profileData?.characterData?.eyes || 1}.png`}
-				alt="Eyes"
-			/>
+			<img id="eyes" src="/src/lib/assets/character/Eyes/eyes1.png" alt="Eyes" />
+			<!-- src={`/src/lib/assets/character/Eyes/eyes${toString(profileData.characterData.eyes) || 1}.png`} -->
 			<img id="nose" src="/src/lib/assets/character/Nose/nose1.png" alt="Character Nose" />
 			<img id="mouth" src="/src/lib/assets/character/Mouth/mouth1.png" alt="Character Mouth" />
 			<img id="body" src="/src/lib/assets/character/Body/body1.png" alt="Body" />
@@ -181,6 +202,6 @@
 				<button on:click={() => changeAppearance('nose', 'right')}>&gt;</button>
 			</div>
 		</div>
-		<button>Save</button>
+		<button on:click={save()}>Save</button>
 	</div>
 </div>
