@@ -7,27 +7,23 @@
 	import { doc, getDoc, updateDoc } from 'firebase/firestore';
 	import { user } from '$lib/stores/authStore';
 
-	onMount(() => {
-		if ($user) loadProfile();
-	});
+	$: if ($user) {
+		loadProfile();
+	}
 
 	let profileData = null;
 
 	async function loadProfile() {
-		// const docRef = doc(db, 'users', $user.uid);
+		const docRef = doc(db, 'users', $user.uid);
+		const docSnap = await getDoc(docSnap);
 
-		const querySnapshot = await getDoc(db, 'users', $user.uid, 'characterData');
-		// const docSnap = await getDoc(querySnapshot);
-
-		if (querySnapshot.exists()) {
-			profileData = querySnapshot.data();
+		if (docSnap.exists()) {
+			profileData = docSnap.data();
 		}
 	}
 
 	function changeAppearance(feature, direction) {
 		console.log('Loaded profile data:', profileData);
-		// console.log(`Changing ${feature} in direction: ${direction}`);
-		// console.log(`Current character data:`, profileData.characterData);
 
 		const eyesElement = document.getElementById('eyes');
 		const hairElement = document.getElementById('hair');
@@ -202,6 +198,6 @@
 				<button on:click={() => changeAppearance('nose', 'right')}>&gt;</button>
 			</div>
 		</div>
-		<button on:click={save()}>Save</button>
+		<button on:click={save}>Save</button>
 	</div>
 </div>
