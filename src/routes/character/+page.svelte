@@ -15,7 +15,7 @@
 
 	async function loadProfile() {
 		const docRef = doc(db, 'users', $user.uid);
-		const docSnap = await getDoc(docSnap);
+		const docSnap = await getDoc(docRef);
 
 		if (docSnap.exists()) {
 			profileData = docSnap.data();
