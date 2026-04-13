@@ -55,14 +55,57 @@
 		}
 
 		button {
-			width: 150px;
-			height: 35px;
+			width: 177px;
+			height: 42px;
 			background-color: var(--primary-color);
 			color: var(--background-color);
 			font-family: var(--Kodchasan-font);
-			font-size: 16px;
+			font-size: 22px;
 			border: none;
-			border-radius: 15px;
+			border-radius: 20px;
+			box-shadow: 5px 5px 8px rgba(128, 128, 128, 0.661);
+		}
+
+		.userInputForm {
+			display: flex;
+			flex-direction: column;
+			background-color: var(--secondary-color);
+			padding: 20px;
+			margin: 0 auto;
+			border-radius: 20px;
+			width: 70%;
+
+			p {
+				font-size: 24px;
+				font-weight: bold;
+				color: var(--background-color);
+			}
+
+			input,
+			textarea {
+				outline: none;
+				margin-bottom: 20px;
+				padding: 10px;
+			}
+
+			.reviewTitle {
+				font-size: 24px;
+			}
+
+			.reviewText {
+				height: 100px;
+				resize: vertical;
+				font-size: 22px;
+			}
+
+			button {
+				background-color: var(--accent-color);
+				color: var(--background-color);
+				align-self: flex-end;
+				/* margin-top: 20px; */
+				font-weight: bold;
+				box-shadow: none;
+			}
 		}
 	}
 }
