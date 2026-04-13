@@ -6,6 +6,7 @@
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { doc, getDoc, updateDoc } from 'firebase/firestore';
 	import { user } from '$lib/stores/authStore';
+	import { goto } from '$app/navigation';
 
 	$: if ($user) {
 		loadProfile();
@@ -185,6 +186,8 @@
 			.catch((error) => {
 				console.error('Error updating profile:', error);
 			});
+
+		goto('/profile');
 	}
 </script>
 

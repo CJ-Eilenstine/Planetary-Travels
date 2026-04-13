@@ -4,6 +4,7 @@
 	import { doc, getDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client';
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 
 	$: if ($user) {
 		loadProfile();
@@ -30,20 +31,19 @@
 			<div class="userInfo">
 				<div class="char">
 					<img
+						src={`/src/lib/assets/character/Hair/hair${profileData.characterData.hair}.png`}
+						alt="Hair"
+					/><img
 						src={`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes}.png`}
 						alt="Eyes"
 					/>
-					<img
-						src={`/src/lib/assets/character/Hair/hair${profileData.characterData.hair}.png`}
-						alt="Hair"
-					/>
-					<img
-						src={`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth}.png`}
-						alt="Mouth"
-					/>
+
 					<img
 						src={`/src/lib/assets/character/Nose/nose${profileData.characterData.nose}.png`}
 						alt="Nose"
+					/><img
+						src={`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth}.png`}
+						alt="Mouth"
 					/>
 					<img
 						src={`/src/lib/assets/character/Body/body${profileData.characterData.body}.png`}
@@ -59,6 +59,7 @@
 					<h3>Planet: {profileData.planetOrigin}</h3>
 					<h3>Species: {profileData.species}</h3>
 					<h3>Date of Birth: {profileData.dob}</h3>
+					<button on:click={goto('/character')}>Edit Character</button>
 				</div>
 			</div>
 		{/if}

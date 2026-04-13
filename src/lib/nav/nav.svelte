@@ -18,9 +18,9 @@
 	<div class="mainNav">
 		<a href="/">Home</a>
 		<a href="/browse">Browse</a>
-		{#if $user}
+		<!-- {#if $user}
 			<a href="/character">Character</a>
-		{/if}
+		{/if} -->
 	</div>
 
 	<div class="logs">
