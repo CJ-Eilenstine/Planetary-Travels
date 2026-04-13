@@ -33,6 +33,26 @@
 						src={`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes}.png`}
 						alt="Eyes"
 					/>
+					<img
+						src={`/src/lib/assets/character/Hair/hair${profileData.characterData.hair}.png`}
+						alt="Hair"
+					/>
+					<img
+						src={`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth}.png`}
+						alt="Mouth"
+					/>
+					<img
+						src={`/src/lib/assets/character/Nose/nose${profileData.characterData.nose}.png`}
+						alt="Nose"
+					/>
+					<img
+						src={`/src/lib/assets/character/Body/body${profileData.characterData.body}.png`}
+						alt="Body"
+					/>
+					<img
+						src={`/src/lib/assets/character/Clothes/clothes${profileData.characterData.clothes}.png`}
+						alt="Clothes"
+					/>
 				</div>
 				<div class="info">
 					<h2>{profileData.username}</h2>

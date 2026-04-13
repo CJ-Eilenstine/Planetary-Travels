@@ -19,12 +19,48 @@
 
 		if (docSnap.exists()) {
 			profileData = docSnap.data();
+			console.log('Loaded profile data:', profileData);
+			// Set the character appearance based on the loaded profile data
+			document
+				.getElementById('eyes')
+				.setAttribute(
+					'src',
+					`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes || 1}.png`
+				);
+			document
+				.getElementById('hair')
+				.setAttribute(
+					'src',
+					`/src/lib/assets/character/Hair/hair${profileData.characterData.hair || 1}.png`
+				);
+			document
+				.getElementById('mouth')
+				.setAttribute(
+					'src',
+					`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth || 1}.png`
+				);
+			document
+				.getElementById('nose')
+				.setAttribute(
+					'src',
+					`/src/lib/assets/character/Nose/nose${profileData.characterData.nose || 1}.png`
+				);
+			document
+				.getElementById('body')
+				.setAttribute(
+					'src',
+					`/src/lib/assets/character/Body/body${profileData.characterData.body || 1}.png`
+				);
+			document
+				.getElementById('clothes')
+				.setAttribute(
+					'src',
+					`/src/lib/assets/character/Clothes/clothes${profileData.characterData.clothes || 1}.png`
+				);
 		}
 	}
 
 	function changeAppearance(feature, direction) {
-		console.log('Loaded profile data:', profileData);
-
 		const eyesElement = document.getElementById('eyes');
 		const hairElement = document.getElementById('hair');
 		const mouthElement = document.getElementById('mouth');
@@ -133,12 +169,12 @@
 
 		const newProfileData = {
 			characterData: {
-				eyes: parseInt(eyesElement.getAttribute('src').match(/eyes(\d+)\.png/)),
-				hair: parseInt(hairElement.getAttribute('src').match(/hair(\d+)\.png/)),
-				mouth: parseInt(mouthElement.getAttribute('src').match(/mouth(\d+)\.png/)),
-				nose: parseInt(noseElement.getAttribute('src').match(/nose(\d+)\.png/)),
-				body: parseInt(bodyElement.getAttribute('src').match(/body(\d+)\.png/)),
-				clothes: parseInt(clothesElement.getAttribute('src').match(/clothes(\d+)\.png/))
+				eyes: parseInt(eyesElement.getAttribute('src').match(/eyes(\d+)\.png/)[1]),
+				hair: parseInt(hairElement.getAttribute('src').match(/hair(\d+)\.png/)[1]),
+				mouth: parseInt(mouthElement.getAttribute('src').match(/mouth(\d+)\.png/)[1]),
+				nose: parseInt(noseElement.getAttribute('src').match(/nose(\d+)\.png/)[1]),
+				body: parseInt(bodyElement.getAttribute('src').match(/body(\d+)\.png/)[1]),
+				clothes: parseInt(clothesElement.getAttribute('src').match(/clothes(\d+)\.png/)[1])
 			}
 		};
 
