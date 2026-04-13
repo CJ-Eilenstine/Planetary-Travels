@@ -17,18 +17,18 @@
 		<h2>Recommended Places to visit</h2>
 	</div>
 	<div class="homeCardsSection">
-		<HomeCard planetName={'planet1'} rating={'3.5'} price={'price'} />
+		<!-- <HomeCard planetName={'planet1'} rating={'3.5'} price={'price'} />
 
 		<HomeCard planetName={'planet2'} rating={'4.5'} price={'price2'} />
 
-		<HomeCard planetName={'planet3'} rating={'4.7'} price={'price3'} />
+		<HomeCard planetName={'planet3'} rating={'4.7'} price={'price3'} /> -->
 
-		<!-- {#if data.summaries.length > 0}
+		{#if data.summaries.length > 0}
 			{#each data.summaries as { slug, planetName, rating, price } (slug)}
 				<HomeCard {planetName} {rating} {price} />
 			{/each}
 		{:else}
 			<p>Loading...</p>
-		{/if} -->
+		{/if}
 	</div>
 </div>
