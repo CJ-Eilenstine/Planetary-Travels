@@ -1,4 +1,5 @@
 .profileMain {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -15,6 +16,7 @@
 }
 
 .profileCard {
+	position: relative;
 	background-color: var(--primary-color);
 	border-radius: 45px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -47,6 +49,7 @@
 }
 
 .userInfo {
+	position: relative;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -54,14 +57,14 @@
 }
 
 .char {
-	/* background-color: white; */
-	/* background-size: cover;
-	background-position: center;
-	width: 175px;
-	height: 175px;
-	border-radius: 45px;
-	margin-right: 40px;
-	margin-left: 20px; */
+	position: relative;
+	/* top: 0;
+	left: 0; */
+	height: 400px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 }
 
 .info {
@@ -69,6 +72,19 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
+}
+
+.info button {
+	font-family: var(--Kodchasan-font);
+	color: var(--background-color);
+	background-color: var(--accent-color);
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 15px;
 }
 
 .char img:nth-child(1) {

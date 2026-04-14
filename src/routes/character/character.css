@@ -75,6 +75,19 @@
 	margin: 15px;
 }
 
+.saveBtn {
+	font-family: var(--Kodchasan-font);
+	color: var(--background-color);
+	background-color: var(--accent-color);
+	border: none;
+	padding: 10px 20px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: 500;
+	margin-top: 15px;
+}
+
 .char {
 	position: relative;
 	/* top: 0;
