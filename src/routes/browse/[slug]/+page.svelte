@@ -1,9 +1,34 @@
 <script>
 	import './details.css';
+	import { doc, setDoc } from 'firebase/firestore';
+	import { db } from '$lib/firebase/firebase.client.js';
+	import { collection, addDoc } from 'firebase/firestore';
+	import { user } from '$lib/stores/authStore';
 	let { data } = $props();
 	import { Modal } from '$lib';
 
 	let showModal = $state(false);
+
+	let reviewTitle = '',
+		reviewDesc = '';
+
+	function createReview() {
+		document.getElementById('userInputForm').style.display = 'flex';
+	}
+
+	function saveReview() {
+		console.log('Review Saved');
+		if (!reviewTitle || !reviewDesc) {
+			alert('Please fill in all fields');
+			return;
+		}
+
+		setDoc(doc(db, 'reviews', user), {
+			reviewTitle,
+			reviewDesc,
+			createdAt: new Date()
+		});
+	}
 </script>
 
 <main class="detailsPage">
@@ -44,6 +69,13 @@
 	</Modal>
 	<div class="reviews">
 		<h4>Reviews</h4>
-		<button>Leave a review</button>
+		<button onclick={createReview}>Leave a review</button>
+		<div id="userInputForm" style="display: none;">
+			<p>Tell us how your trip went.</p>
+			<input type="text" class="reviewTitle" placeholder="Title" bind:value={reviewTitle} />
+			<textarea class="reviewDesc" placeholder="Your review here :)" bind:value={reviewDesc}
+			></textarea>
+			<button onclick={saveReview}>Save</button>
+		</div>
 	</div>
 </main>
