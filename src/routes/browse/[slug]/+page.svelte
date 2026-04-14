@@ -1,5 +1,8 @@
 <script>
 	import './details.css';
+
+	import { getAuth } from 'firebase/auth';
+
 	import { doc, setDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { collection, addDoc } from 'firebase/firestore';
@@ -13,21 +16,40 @@
 		reviewDesc = '';
 
 	function createReview() {
-		document.getElementById('userInputForm').style.display = 'flex';
+		const auth = getAuth();
+		const user = auth.currentUser;
+		if (user) {
+			document.getElementById('userInputForm').style.display = 'flex';
+			console.log('username:', user.displayName);
+		} else {
+			alert('You need to be logged in to leave a review');
+		}
 	}
 
-	function saveReview() {
-		console.log('Review Saved');
+	async function saveReview() {
 		if (!reviewTitle || !reviewDesc) {
 			alert('Please fill in all fields');
 			return;
 		}
+		try {
+			const auth = getAuth();
+			const user = auth.currentUser;
 
-		setDoc(doc(db, 'reviews', user), {
-			reviewTitle,
-			reviewDesc,
-			createdAt: new Date()
-		});
+			if (user) {
+				// const newReviewRef = doc(db, 'reviews');
+				await setDoc(doc(db, 'reviews', user.uid), {
+					reviewTitle,
+					reviewDesc,
+					reviewer: user.displayName,
+					createdAt: new Date()
+				});
+				console.log('Review Saved');
+			} else {
+				console.log('review did not save');
+			}
+		} catch (error) {
+			alert(error.message);
+		}
 	}
 </script>
 
