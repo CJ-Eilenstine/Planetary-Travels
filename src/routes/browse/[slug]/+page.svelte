@@ -2,7 +2,7 @@
 	import './details.css';
 
 	import { getAuth } from 'firebase/auth';
-
+	import { onMount } from 'svelte';
 	import { doc, setDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { collection, addDoc } from 'firebase/firestore';
@@ -11,6 +11,25 @@
 	import { Modal } from '$lib';
 
 	let showModal = $state(false);
+
+	onMount(() => {
+		if ($user) {
+			console.log('Current user:', $user);
+		} else {
+			console.log('No user is currently logged in');
+		}
+	});
+
+	let profileData = null;
+
+	async function loadProfile() {
+		const docRef = doc(db, 'users', $user.uid);
+		const docSnap = await getDoc(docRef);
+
+		if (docSnap.exists()) {
+			profileData = docSnap.data();
+		}
+	}
 
 	let reviewTitle = '',
 		reviewDesc = '';
@@ -37,7 +56,7 @@
 
 			if (user) {
 				// const newReviewRef = doc(db, 'reviews');
-				await setDoc(doc(db, 'reviews', user.uid), {
+				await addDoc(collection(db, 'reviews'), {
 					reviewTitle,
 					reviewDesc,
 					reviewer: user.displayName,
@@ -65,29 +84,7 @@
 		<button onclick={() => (showModal = true)}>Travel Now!!!</button>
 	</div>
 	<Modal bind:showModal>
-		{#snippet header()}
-			<h2>
-				modal
-				<small><em>adjective</em> mod·al \ˈmō-dəl\</small>
-			</h2>
-		{/snippet}
-
-		<ol class="definition-list">
-			<li>of or relating to modality in logic</li>
-			<li>
-				containing provisions as to the mode of procedure or the manner of taking effect —used of a
-				contract or legacy
-			</li>
-			<li>of or relating to a musical mode</li>
-			<li>of or relating to structure as opposed to substance</li>
-			<li>
-				of, relating to, or constituting a grammatical form or category characteristically
-				indicating predication
-			</li>
-			<li>of or relating to a statistical mode</li>
-		</ol>
-
-		<a href="https://www.merriam-webster.com/dictionary/modal">merriam-webster.com</a>
+		<div class="postCard"></div>
 	</Modal>
 	<div class="reviews">
 		<h4>Reviews</h4>
