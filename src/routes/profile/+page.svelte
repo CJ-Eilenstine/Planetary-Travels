@@ -25,43 +25,52 @@
 <div class="profileMain">
 	<h1>Profile</h1>
 
-	<div class="profileCard">
-		{#if profileData}
-			<h1>Intergalactic Travel Administration</h1>
-			<div class="userInfo">
-				<div class="char">
-					<img
-						src={`/src/lib/assets/character/Hair/hair${profileData.characterData.hair}.png`}
-						alt="Hair"
-					/><img
-						src={`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes}.png`}
-						alt="Eyes"
-					/>
+	<div class="profile">
+		<div class="profileCard">
+			{#if profileData}
+				<h1>Intergalactic Travel Administration</h1>
+				<div class="userInfo">
+					<div class="char">
+						<img
+							src={`/src/lib/assets/character/Hair/hair${profileData.characterData.hair}.png`}
+							alt="Hair"
+						/><img
+							src={`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes}.png`}
+							alt="Eyes"
+						/>
 
-					<img
-						src={`/src/lib/assets/character/Nose/nose${profileData.characterData.nose}.png`}
-						alt="Nose"
-					/><img
-						src={`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth}.png`}
-						alt="Mouth"
-					/>
-					<img
-						src={`/src/lib/assets/character/Body/body${profileData.characterData.body}.png`}
-						alt="Body"
-					/>
-					<img
-						src={`/src/lib/assets/character/Clothes/clothes${profileData.characterData.clothes}.png`}
-						alt="Clothes"
-					/>
+						<img
+							src={`/src/lib/assets/character/Nose/nose${profileData.characterData.nose}.png`}
+							alt="Nose"
+						/><img
+							src={`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth}.png`}
+							alt="Mouth"
+						/>
+						<img
+							src={`/src/lib/assets/character/Body/body${profileData.characterData.body}.png`}
+							alt="Body"
+						/>
+						<img
+							src={`/src/lib/assets/character/Clothes/clothes${profileData.characterData.clothes}.png`}
+							alt="Clothes"
+						/>
+					</div>
+					<div class="info">
+						<h2>{profileData.username}</h2>
+						<h3>Planet: {profileData.planetOrigin}</h3>
+						<h3>Species: {profileData.species}</h3>
+						<h3>Date of Birth: {profileData.dob}</h3>
+						<button on:click={goto('/character')}>Edit Character</button>
+					</div>
 				</div>
-				<div class="info">
-					<h2>{profileData.username}</h2>
-					<h3>Planet: {profileData.planetOrigin}</h3>
-					<h3>Species: {profileData.species}</h3>
-					<h3>Date of Birth: {profileData.dob}</h3>
-					<button on:click={goto('/character')}>Edit Character</button>
-				</div>
-			</div>
-		{/if}
+			{/if}
+		</div>
+		<div class="travelStamps">
+			<h1>Travel Stamps</h1>
+			<div class="stamp1"></div>
+			<div class="stamp2"></div>
+			<div class="stamp3"></div>
+			<div class="stamp4"></div>
+		</div>
 	</div>
 </div>
