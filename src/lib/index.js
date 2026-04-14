@@ -3,4 +3,3 @@ export { default as Nav } from './nav/nav.svelte';
 export { default as Footer } from './footer/footer.svelte';
 export { default as BrowseCard } from './browse cards/browseCard.svelte';
 export { default as HomeCard } from './home cards/homeCards.svelte';
-export { default as ReviewCard } from './review card/reviewCard.svelte';
