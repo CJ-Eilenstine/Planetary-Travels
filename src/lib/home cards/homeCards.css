@@ -11,6 +11,9 @@
 		width: 100%;
 		height: 214px;
 		border-radius: 65px;
+		img {
+			width: 100%;
+		}
 	}
 
 	.homeCardTextHolder {

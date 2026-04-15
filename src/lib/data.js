@@ -1,9 +1,10 @@
-export const homeDetails = [
+export const details = [
 	{
 		slug: 'Solaris',
 		planetName: 'Solaris',
 		rating: '1.2',
 		price: '𝄽1,800',
+		image: '/src/lib/assets/solaris.gif',
 		desc: "Solaris, a planet mostly covered by a 700 billion tons sentient gelatinous ocean. Come see tall extensors, complex shaped symmetriads, and mimoids that extrude masses of plasma that mimic the shapes of other things from clouds to human made object. Catch a peek of these temporary structures before they dissolve back into the ocean. Maybe you'll even see some rare free floating independents that detach themselves from the surface of Solaris. Be aware that there is no oxygen and Solaris' atmosphere is considered very toxic."
 	},
 

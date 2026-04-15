@@ -1,12 +1,13 @@
-import { homeDetails } from './data.js';
+import { details } from '../lib/data.js';
 
 export function load() {
 	return {
-		summaries: homeDetails.map((detail) => ({
+		summaries: details.map((detail) => ({
 			slug: detail.slug,
 			planetName: detail.planetName,
 			rating: detail.rating,
 			price: detail.price,
+			image: detail.image,
 			desc: detail.desc
 		}))
 	};
