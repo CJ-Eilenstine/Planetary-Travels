@@ -31,8 +31,9 @@
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	padding: 20px;
 	width: 100%;
-	max-width: 650px;
+	max-width: 685px;
 	text-align: center;
+	border: 4px solid var(--secondary-color);
 }
 
 .profileCard h1 {
@@ -70,11 +71,13 @@
 	position: relative;
 	/* top: 0;
 	left: 0; */
-	height: 400px;
+	height: 275px;
 	width: 100%;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
+	align-items: start;
+	padding-left: 30px;
 }
 
 .info {
@@ -82,6 +85,7 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
+	min-width: 340px;
 }
 
 .info button {
@@ -95,13 +99,15 @@
 	font-size: 18px;
 	font-weight: 500;
 	margin-top: 15px;
+	align-self: self-end;
+	margin-right: 25px;
 }
 
 .char img:nth-child(1) {
 	position: absolute;
 	top: 0;
 	left: 10;
-	height: 400px;
+	height: 100%;
 	z-index: 71;
 }
 
@@ -109,7 +115,7 @@
 	position: absolute;
 	top: 0;
 	left: 10;
-	height: 400px;
+	height: 100%;
 	width: auto;
 
 	z-index: 51;
@@ -119,7 +125,7 @@
 	top: 0;
 	left: 10;
 	z-index: 61;
-	height: 400px;
+	height: 100%;
 	width: auto;
 }
 .char img:nth-child(4) {
@@ -127,7 +133,7 @@
 	top: 0;
 	left: 10;
 	z-index: 41;
-	height: 400px;
+	height: 100%;
 	width: auto;
 }
 
@@ -136,7 +142,7 @@
 	top: 0;
 	left: 10;
 	z-index: 21;
-	height: 400px;
+	height: 100%;
 	width: auto;
 }
 
@@ -145,7 +151,7 @@
 	top: 0;
 	left: 10;
 	z-index: 31;
-	height: 400px;
+	height: 100%;
 	width: auto;
 }
 
