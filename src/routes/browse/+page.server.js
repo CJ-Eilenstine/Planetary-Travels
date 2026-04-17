@@ -7,8 +7,7 @@ export function load() {
 			planetName: detail.planetName,
 			rating: detail.rating,
 			price: detail.price,
-			src: detail.src,
-			alt: detail.alt,
+			image: detail.image,
 			desc: detail.desc
 		}))
 	};

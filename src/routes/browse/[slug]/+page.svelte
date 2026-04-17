@@ -12,8 +12,8 @@
 
 	let showModal = $state(false);
 
-	let reviewTitle = '',
-		reviewDesc = '',
+	let reviewTitle = $state(''),
+		reviewDesc = $state(''),
 		planet = data.detail.planetName;
 
 	function createReview() {

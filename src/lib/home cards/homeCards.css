@@ -6,13 +6,23 @@
 	display: flex;
 	flex-direction: column;
 
+	a {
+		width: 100%;
+		text-decoration: none;
+		color: white;
+	}
+
 	.image-holder {
-		background-color: var(--accent-color);
+		background-color: black;
 		width: 100%;
 		height: 214px;
 		border-radius: 65px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
 		img {
-			width: 100%;
+			height: 90%;
 		}
 	}
 
@@ -25,14 +35,14 @@
 			font-family: var(--KodeMono-font);
 			font-weight: normal;
 			font-size: 32px;
-			margin: 8px 5px 15px 10px;
+			margin: 8px 5px 15px 25px;
 		}
 
 		p {
 			font-family: var(--Kodchasan-font);
 			font-size: 24px;
 			margin-bottom: 0px;
-			margin: 0 5px 5px 10px;
+			margin: 0 5px 5px 30px;
 		}
 	}
 }

@@ -6,8 +6,8 @@
 
 <div class="browse">
 	{#if data.summaries.length > 0}
-		{#each data.summaries as { slug, planetName, rating, price } (slug)}
-			<BrowseCard {planetName} {rating} {price} />
+		{#each data.summaries as { slug, planetName, rating, price, image } (slug)}
+			<BrowseCard {planetName} {rating} {price} {image} />
 		{/each}
 	{:else}
 		<p>Loading...</p>

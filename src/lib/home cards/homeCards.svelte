@@ -1,6 +1,5 @@
 <script>
 	import './homeCards.css';
-
 	let { planetName, rating, price, image } = $props();
 </script>
 

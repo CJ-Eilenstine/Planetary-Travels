@@ -9,6 +9,10 @@
 
 		.bannerText {
 			text-align: center;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 			h1,
 			p {
 				color: var(--background-color);
@@ -21,7 +25,7 @@
 
 	.homeCardTitleText {
 		/* margin-top: 23px; */
-		margin-top: 23px 0 82px;
+		margin: 23px 0 82px;
 		h2 {
 			text-align: center;
 			color: var(--text-color);
