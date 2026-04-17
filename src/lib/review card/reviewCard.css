@@ -1,0 +1,19 @@
+#reviewCard {
+	background-color: var(--secondary-color);
+	border-radius: 65px;
+	padding: 25px;
+	color: var(--background-color);
+	display: flex;
+	flex-direction: column;
+	font-family: var(--Kodchasan-font);
+	font-size: 18px;
+
+	#userReviewTop {
+		display: flex;
+	}
+
+	#date {
+		align-self: self-end;
+		font-size: 16px;
+	}
+}

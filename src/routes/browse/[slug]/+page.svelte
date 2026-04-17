@@ -1,6 +1,6 @@
 <script>
 	import './details.css';
-
+	import ReviewCard from '$lib/review card/reviewCard.svelte';
 	import { getAuth } from 'firebase/auth';
 	import { onMount } from 'svelte';
 	import { doc, setDoc } from 'firebase/firestore';
@@ -12,34 +12,16 @@
 
 	let showModal = $state(false);
 
-	onMount(() => {
-		if ($user) {
-			console.log('Current user:', $user);
-		} else {
-			console.log('No user is currently logged in');
-		}
-	});
-
-	let profileData = null;
-
-	async function loadProfile() {
-		const docRef = doc(db, 'users', $user.uid);
-		const docSnap = await getDoc(docRef);
-
-		if (docSnap.exists()) {
-			profileData = docSnap.data();
-		}
-	}
-
 	let reviewTitle = '',
-		reviewDesc = '';
+		reviewDesc = '',
+		planet = data.detail.planetName;
 
 	function createReview() {
 		const auth = getAuth();
 		const user = auth.currentUser;
 		if (user) {
 			document.getElementById('userInputForm').style.display = 'flex';
-			console.log('username:', user.displayName);
+			// console.log('username:', user.displayName);
 		} else {
 			alert('You need to be logged in to leave a review');
 		}
@@ -57,6 +39,7 @@
 			if (user) {
 				// const newReviewRef = doc(db, 'reviews');
 				await addDoc(collection(db, 'reviews'), {
+					planet,
 					reviewTitle,
 					reviewDesc,
 					reviewer: user.displayName,
@@ -66,6 +49,7 @@
 			} else {
 				console.log('review did not save');
 			}
+			document.getElementById('userInputForm').style.display = 'none';
 		} catch (error) {
 			alert(error.message);
 		}
@@ -96,5 +80,6 @@
 			></textarea>
 			<button onclick={saveReview}>Save</button>
 		</div>
+		<ReviewCard></ReviewCard>
 	</div>
 </main>
