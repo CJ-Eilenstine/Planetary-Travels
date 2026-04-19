@@ -1,11 +1,19 @@
 <script>
-	let { showModal = $bindable(), header, children } = $props();
+	let { showModal = $bindable(), header, children, planetName } = $props();
 
 	let dialog = $state(); // HTMLDialogElement
 
 	$effect(() => {
 		if (showModal) dialog.showModal();
 	});
+
+	function takePicture() {
+		// Placeholder for taking a picture
+		alert('Picture taken!');
+		console.log('Picture taken!');
+		console.log({ planetName });
+		dialog.close();
+	}
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events, a11y_no_noninteractive_element_interactions -->
@@ -22,7 +30,7 @@
 		{@render children?.()}
 		<hr />
 		<!-- svelte-ignore a11y_autofocus -->
-		<button autofocus onclick={() => dialog.close()}>Take Picture</button>
+		<button autofocus onclick={takePicture}>Take Picture</button>
 	</div>
 </dialog>
 
