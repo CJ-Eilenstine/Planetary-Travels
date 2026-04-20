@@ -1,4 +1,4 @@
-<!-- <script>
+<script>
 	import './reviewCard.css';
 	import { onMount } from 'svelte';
 	import { get } from 'svelte/store';
@@ -18,28 +18,32 @@
 		return unsub; // Clean up listener on destroy
 	});
 
-	// $: if ($user) {
-	// 	loadReviews();
-	// }
+	$: if ($user) {
+		loadReviews();
+	}
 
-	// let reviewsData = null;
+	async function loadReviews() {
+		const docRef = doc(db, 'reviews');
+		const docSnap = await getDoc(docRef);
 
-	// async function loadReviews() {
-	// 	const docRef = doc(db, 'reviews');
-	// 	const docSnap = await getDoc(docRef);
-
-	// 	if (docSnap.exists()) {
-	// 		reviewsData = docSnap.data();
-	// 	}
-	// }
+		if (docSnap.exists()) {
+			reviewsData = docSnap.data();
+		}
+	}
 </script>
 
-<div id="reviewCard">
-	<div id="userReviewTop">
-		<div class="userIcon">icon</div>
-		<span id="reviewerName">{reviewsData.reviewer}</span>
-	</div>
+{#if reviewsData.length > 0}
+	{#each reviewsData as { reviewDesc, reviewer, createdAt }}
+		<div id="reviewCard">
+			<div id="userReviewTop">
+				<div class="userIcon">icon</div>
+				<span id="reviewerName">{reviewsData.reviewer}</span>
+			</div>
 
-	<p id="review">{reviewsData.reviewDesc}</p>
-	<p id="date">{createdAt}</p>
-</div> -->
+			<p id="review">{reviewsData.reviewDesc}</p>
+			<!-- <p id="date">{createdAt}</p> -->
+		</div>
+	{/each}
+{:else}
+	<p>Loading...</p>
+{/if}

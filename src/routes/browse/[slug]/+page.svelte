@@ -16,6 +16,27 @@
 		reviewDesc = $state(''),
 		planet = data.detail.planetName;
 
+	// onMount(() => {
+	// 	loadReviews();
+	// });
+
+	// let reviewsData = null;
+
+	// function loadReviews() {
+	// 	const docRef = doc(db, 'reviews');
+	// 	const docSnap = getDoc(docRef);
+
+	// 	if (docSnap.exists()) {
+	// 		reviewsData = docSnap.data();
+
+	// 		console.log('reviewsData:', reviewsData);
+
+	// 		for (const review of reviewsData) {
+	// 			console.log('Review:', review);
+	// 		}
+	// 	}
+	// }
+
 	function createReview() {
 		const auth = getAuth();
 		const user = auth.currentUser;
