@@ -1,4 +1,9 @@
 <script>
+	import { user } from '$lib/stores/authStore';
+	import { db } from '$lib/firebase/firebase.client.js';
+	import { doc, setDoc, updateDoc } from 'firebase/firestore';
+	import { getAuth } from 'firebase/auth';
+
 	let { showModal = $bindable(), header, children, planetName } = $props();
 
 	let dialog = $state(); // HTMLDialogElement
@@ -13,6 +18,21 @@
 		console.log('Picture taken!');
 		console.log({ planetName });
 		dialog.close();
+
+		const auth = getAuth();
+		const user = auth.currentUser;
+		if (user) {
+			console.log('user:', user.displayName);
+			updateDoc(doc(db, 'users', user.uid), {
+				visitedSolaris: planetName === 'Solaris' ? true : false,
+				visitedVex: planetName === 'Vex' ? true : false,
+				visitedMasquerade: planetName === 'Masquerade' ? true : false
+			});
+			console.log('User document updated with visited planet');
+			console.log(user.displayName, 'visited', planetName);
+		} else {
+			alert('You need to be logged in to leave a review');
+		}
 	}
 </script>
 

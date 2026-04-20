@@ -50,6 +50,9 @@
 					body: 1,
 					clothes: 1
 				},
+				visitedSolaris: false,
+				visitedVex: false,
+				visitedMasquerade: false,
 				createdAt: new Date()
 			});
 
