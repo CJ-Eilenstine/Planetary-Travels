@@ -38,10 +38,11 @@
 	.homeCardsSection {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
 		/* align-items: center; */
 
 		/* testing margin */
-		margin-top: 20px;
+		margin: 20px;
 		gap: 100px;
 	}
 }

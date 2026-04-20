@@ -1,6 +1,7 @@
 .browse {
 	padding: 85px 40px;
 	display: flex;
+	/* flex-wrap: wrap; */
 	flex-direction: column;
 	align-items: center;
 	background-color: var(--background-color);

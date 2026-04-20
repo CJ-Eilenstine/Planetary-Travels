@@ -5,6 +5,8 @@
 	max-width: 830px;
 	display: flex;
 	margin-bottom: 20px;
+	flex-wrap: wrap;
+	padding: 10px;
 
 	a {
 		display: flex;
@@ -14,7 +16,7 @@
 	}
 
 	.image-holder {
-		background-color: black;
+		/* background-color: black; */
 		width: 100%;
 		max-width: 303px;
 		height: 224px;
@@ -22,9 +24,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 
 		img {
-			height: 90%;
+			height: 85%;
 		}
 	}
 
