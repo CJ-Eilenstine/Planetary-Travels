@@ -24,9 +24,7 @@
 		if (user) {
 			console.log('user:', user.displayName);
 			updateDoc(doc(db, 'users', user.uid), {
-				visitedSolaris: planetName === 'Solaris' ? true : false,
-				visitedVex: planetName === 'Vex' ? true : false,
-				visitedMasquerade: planetName === 'Masquerade' ? true : false
+				[`visited${planetName}`]: true
 			});
 			console.log('User document updated with visited planet');
 			console.log(user.displayName, 'visited', planetName);

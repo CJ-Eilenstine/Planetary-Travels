@@ -18,6 +18,19 @@
 
 		if (docSnap.exists()) {
 			profileData = docSnap.data();
+
+			console.log('Profile data loaded:', profileData);
+
+			document.querySelector('.stamp2').style.backgroundImage = profileData.visitedSolaris
+				? "url('/src/lib/assets/planets/solaris.gif')"
+				: 'none';
+			document.querySelector('.stamp3').style.backgroundImage = profileData.visitedMasquerade
+				? "url('/src/lib/assets/planets/masquerade.gif')"
+				: 'none';
+
+			document.querySelector('.stamp4').style.backgroundImage = profileData.visitedVex
+				? "url('/src/lib/assets/planets/vex.gif')"
+				: 'none';
 		}
 	}
 </script>
