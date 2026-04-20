@@ -81,9 +81,13 @@
 		<div class="travelStamps">
 			<h1>Travel Stamps</h1>
 			<div class="stamp1"></div>
+			<h3>Earth</h3>
 			<div class="stamp2"></div>
+			<h3>Solaris</h3>
 			<div class="stamp3"></div>
+			<h3>Masquerade</h3>
 			<div class="stamp4"></div>
+			<h3>Vex</h3>
 		</div>
 	</div>
 </div>

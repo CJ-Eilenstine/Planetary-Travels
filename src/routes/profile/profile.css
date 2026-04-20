@@ -161,7 +161,7 @@
 	width: 300px;
 	align-items: center;
 	justify-content: space-around;
-	padding: 20px;
+	padding: 10px;
 	border-radius: 45px;
 	gap: 20px;
 	margin-top: 30px;
@@ -182,6 +182,18 @@
 .stamp4 {
 	width: 100px;
 	height: 100px;
-	background-color: var(--accent-color);
+
 	border-radius: 50%;
+}
+
+.stamp1 {
+	background-image: url('/src/lib/assets/planets/earth.gif');
+}
+
+.travelStamps h3 {
+	font-family: var(--Kodchasan-font);
+	font-size: 18px;
+	font-weight: 300;
+	color: var(--background-color);
+	margin-top: 10px;
 }
