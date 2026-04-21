@@ -2,7 +2,7 @@
 	import './signup.css';
 	import { auth } from '$lib/firebase/firebase.client.js';
 	import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-	import { doc, setDoc } from 'firebase/firestore';
+	import { doc, setDoc, updateDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { goto } from '$app/navigation';
 	import { collection, addDoc } from 'firebase/firestore';
@@ -53,12 +53,33 @@
 				visitedSolaris: false,
 				visitedVex: false,
 				visitedMasquerade: false,
+				visitedEarth: false,
 				createdAt: new Date()
 			});
 
+			handlePlanetofOrigin(user);
 			goto('/character');
 		} catch (error) {
 			alert(error.message);
+		}
+	}
+	function handlePlanetofOrigin(user) {
+		if (planetOrigin === 'Earth') {
+			updateDoc(doc(db, 'users', user.uid), {
+				visitedEarth: true
+			});
+		} else if (planetOrigin === 'Solaris') {
+			updateDoc(doc(db, 'users', user.uid), {
+				visitedSolaris: true
+			});
+		} else if (planetOrigin === 'Masquerade') {
+			updateDoc(doc(db, 'users', user.uid), {
+				visitedMasquerade: true
+			});
+		} else if (planetOrigin === 'Vex') {
+			updateDoc(doc(db, 'users', user.uid), {
+				visitedVex: true
+			});
 		}
 	}
 </script>
@@ -76,7 +97,14 @@
 			placeholder="Confirm Password"
 		/>
 		<input bind:value={dob} type="date" name="dob" placeholder="Date of Birth" />
-		<input bind:value={planetOrigin} type="text" name="planet_origin" placeholder="Planet Origin" />
+		<!-- <input bind:value={planetOrigin} type="" name="planet_origin" placeholder="Planet Origin" /> -->
+		<label for="planet_origin">Choose a Planet of Origin</label>
+		<select id="planets" name="planet_origin" bind:value={planetOrigin}>
+			<option value="Earth">Earth</option>
+			<option value="Solaris">Solaris</option>
+			<option value="Masquerade">Masquerade</option>
+			<option value="Vex">Vex</option>
+		</select>
 		<input bind:value={species} type="text" name="species" placeholder="Species" />
 		<button type="submit">Sign Up</button>
 	</form>

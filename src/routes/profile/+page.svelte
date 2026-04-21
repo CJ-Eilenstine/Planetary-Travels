@@ -21,6 +21,10 @@
 
 			console.log('Profile data loaded:', profileData);
 
+			document.querySelector('.stamp1').style.backgroundImage = profileData.visitedEarth
+				? "url('/src/lib/assets/planets/earth.gif')"
+				: 'none';
+
 			document.querySelector('.stamp2').style.backgroundImage = profileData.visitedSolaris
 				? "url('/src/lib/assets/planets/solaris.gif')"
 				: 'none';
