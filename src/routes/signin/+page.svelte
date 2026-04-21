@@ -14,8 +14,8 @@
 		signInWithEmailAndPassword(auth, email, pw)
 			.then((userCredential) => {
 				const user = userCredential.user;
-				console.log(user);
-				alert('Login successful!');
+				// console.log(user);
+				// alert('Login successful!');
 				goto('/');
 			})
 			.catch((error) => {
