@@ -16,7 +16,7 @@
 	align-items: center;
 	justify-content: center;
 	min-width: 550px;
-	min-height: 550px;
+	min-height: 575px;
 	background-color: var(--primary-color);
 	margin-bottom: 50px;
 	padding: 0 20px;
@@ -51,4 +51,23 @@
 	border-radius: 10px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
+}
+
+.signUp form label {
+	color: var(--background-color);
+	font-family: var(--KodeMono-font);
+	margin-bottom: 5px;
+	/* align-self: flex-start; */
+}
+
+.signUp form select {
+	width: 350px;
+	height: 40px;
+	margin-bottom: 20px;
+	padding: 0 10px;
+	font-size: 18px;
+	font-family: var(--KodeMono-font);
+	border: none;
+	border-radius: 10px;
+	outline: none;
 }

@@ -18,7 +18,7 @@
 	</div>
 	<div class="homeCardsSection">
 		{#if data.summaries.length > 0}
-			{#each data.summaries as { slug, planetName, rating, price, image } (slug)}
+			{#each data.summaries.slice(0, 3) as { slug, planetName, rating, price, image } (slug)}
 				<HomeCard {planetName} {rating} {price} {image} />
 			{/each}
 		{:else}
