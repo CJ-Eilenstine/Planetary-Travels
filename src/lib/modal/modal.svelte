@@ -13,7 +13,6 @@
 	});
 
 	function takePicture() {
-		// Placeholder for taking a picture
 		alert('Picture taken!');
 		console.log('Picture taken!');
 		console.log({ planetName });
@@ -44,9 +43,9 @@
 >
 	<div>
 		{@render header?.()}
-		<hr />
+		<!-- <hr /> -->
 		{@render children?.()}
-		<hr />
+		<!-- <hr /> -->
 		<!-- svelte-ignore a11y_autofocus -->
 		<button autofocus onclick={takePicture}>Take Picture</button>
 	</div>
@@ -58,6 +57,7 @@
 		border-radius: 0.2em;
 		border: none;
 		padding: 0;
+		margin: auto;
 	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);
@@ -89,5 +89,15 @@
 	}
 	button {
 		display: block;
+		width: 200px;
+		height: 50px;
+		background-color: var(--accent-color);
+		color: var(--background-color);
+		font-size: 18px;
+		font-family: var(--KodeMono-font);
+		border: none;
+		border-radius: 10px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
 	}
 </style>
