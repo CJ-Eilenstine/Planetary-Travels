@@ -23,7 +23,7 @@ export const details = [
 		rating: '3.2',
 		price: '𝄽1,500',
 		image: '/src/lib/assets/planets/vex.gif',
-		desc: 'Home of the irksome Sniffler'
+		desc: "Vex is a planet currently in an ice age and is home of the snifflers. Come see all the sniffler species before some of them go extinct. Although the majority of the planet may be frozen that doesn't mean it's not worth a visit. You can explore the snowy mountains, participate in snow activities like skiing, or you can visit the equator where it's less cold and spend time with irk snifflers the cutest and tamest of all the snifflers."
 	},
 
 	{
@@ -32,6 +32,6 @@ export const details = [
 		rating: '1.8',
 		price: '𝄽1,893',
 		image: '/src/lib/assets/planets/earth.gif',
-		desc: "Earth, a planet mostly covered by a 700 billion tons sentient gelatinous ocean. Come see tall extensors, complex shaped symmetriads, and mimoids that extrude masses of plasma that mimic the shapes of other things from clouds to human made object. Catch a peek of these temporary structures before they dissolve back into the ocean. Maybe you'll even see some rare free floating independents that detach themselves from the surface of Solaris. Be aware that there is no oxygen and Solaris' atmosphere is considered very toxic."
+		desc: 'Earth, .'
 	}
 ];
