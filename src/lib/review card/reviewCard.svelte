@@ -1,7 +1,6 @@
 <script>
 	import './reviewCard.css';
 	import { onMount } from 'svelte';
-	import { get } from 'svelte/store';
 	import { auth } from '$lib/firebase/firebase.client.js';
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { query, collection, onSnapshot } from 'firebase/firestore';
@@ -16,7 +15,11 @@
 				id: doc.id,
 				...doc.data()
 			}));
-			console.log(reviewsData);
+			// console.log(reviewsData[0].planet);
+			// reviewsData.forEach((obj) => console.log(obj));
+			for (const reviewPlanet of reviewsData) {
+				console.log(reviewPlanet.planet);
+			}
 		});
 
 		return unsub;

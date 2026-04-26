@@ -3,12 +3,12 @@
 	import ReviewCard from '$lib/review card/reviewCard.svelte';
 	import { getAuth } from 'firebase/auth';
 	import { onMount } from 'svelte';
-	import { doc, setDoc } from 'firebase/firestore';
 	import { db } from '$lib/firebase/firebase.client.js';
-	import { collection, addDoc } from 'firebase/firestore';
+	import { doc, setDoc, addDoc, query, collection, onSnapshot } from 'firebase/firestore';
 	import { user } from '$lib/stores/authStore';
-	let { data } = $props();
 	import { Modal } from '$lib';
+
+	let { data } = $props();
 
 	let showModal = $state(false);
 
@@ -80,6 +80,9 @@
 			></textarea>
 			<button onclick={saveReview}>Save</button>
 		</div>
+		<!-- {#if reviewPlanet.planet === data.detail.planetName}
+			<ReviewCard></ReviewCard>
+		{/if} -->
 		<ReviewCard></ReviewCard>
 	</div>
 </main>
