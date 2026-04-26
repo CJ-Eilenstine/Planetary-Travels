@@ -1,6 +1,9 @@
 <script>
 	import './details.css';
-	import ReviewCard from '$lib/review card/reviewCard.svelte';
+	import SolarisReviewCard from '$lib/review card/solarisReviewCard.svelte';
+	import VexReviewCard from '$lib/review card/vexReviewCard.svelte';
+	import MasqueradeReviewCard from '$lib/review card/masqueradeReviewCard.svelte';
+	import EarthReviewCard from '$lib/review card/earthReviewCard.svelte';
 	import { getAuth } from 'firebase/auth';
 	import { onMount } from 'svelte';
 	import { db } from '$lib/firebase/firebase.client.js';
@@ -67,12 +70,15 @@
 		<p>{data.detail.desc}</p>
 		<button onclick={() => (showModal = true)}>Travel Now!!!</button>
 	</div>
+
 	<Modal bind:showModal planetName={data.detail.planetName}>
 		<div class="postCard"></div>
 	</Modal>
+
 	<div class="reviews">
 		<h4>Reviews</h4>
 		<button onclick={createReview}>Leave a review</button>
+
 		<div id="userInputForm" style="display: none;">
 			<p>Tell us how your trip went.</p>
 			<input type="text" class="reviewTitle" placeholder="Title" bind:value={reviewTitle} />
@@ -80,9 +86,16 @@
 			></textarea>
 			<button onclick={saveReview}>Save</button>
 		</div>
-		<!-- {#if reviewPlanet.planet === data.detail.planetName}
-			<ReviewCard></ReviewCard>
-		{/if} -->
-		<ReviewCard></ReviewCard>
+
+		{#if data.detail.planetName === 'Solaris'}
+			<SolarisReviewCard></SolarisReviewCard>
+		{:else if data.detail.planetName === 'Vex'}
+			<VexReviewCard></VexReviewCard>
+		{:else if data.detail.planetName === 'Masquerade'}
+			<MasqueradeReviewCard></MasqueradeReviewCard>
+		{:else}
+			<EarthReviewCard></EarthReviewCard>
+		{/if}
+		<!-- <ReviewCard></ReviewCard> -->
 	</div>
 </main>

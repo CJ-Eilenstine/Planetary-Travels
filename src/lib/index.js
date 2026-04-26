@@ -4,4 +4,7 @@ export { default as Footer } from './footer/footer.svelte';
 export { default as BrowseCard } from './browse cards/browseCard.svelte';
 export { default as HomeCard } from './home cards/homeCards.svelte';
 export { default as Modal } from './modal/modal.svelte';
-export { default as ReviewCard } from './review card/reviewCard.svelte';
+export { default as SolarisReviewCard } from './review card/solarisReviewCard.svelte';
+export { default as VexReviewCard } from './review card/vexReviewCard.svelte';
+export { default as MasqueradeReviewCard } from './review card/masqueradeReviewCard.svelte';
+export { default as EarthReviewCard } from './review card/earthReviewCard.svelte';

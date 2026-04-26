@@ -3,26 +3,16 @@
 	import { onMount } from 'svelte';
 	import { auth } from '$lib/firebase/firebase.client.js';
 	import { db } from '$lib/firebase/firebase.client.js';
-	import { query, collection, onSnapshot } from 'firebase/firestore';
+	import { query, collection, onSnapshot, where, getDocs } from 'firebase/firestore';
 	import { user } from '$lib/stores/authStore';
 
 	let reviewsData = [];
 
-	onMount(() => {
-		const q = query(collection(db, 'reviews'));
-		const unsub = onSnapshot(q, (querySnapshot) => {
-			reviewsData = querySnapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data()
-			}));
-			// console.log(reviewsData[0].planet);
-			// reviewsData.forEach((obj) => console.log(obj));
-			for (const reviewPlanet of reviewsData) {
-				console.log(reviewPlanet.planet);
-			}
-		});
+	onMount(async () => {
+		const q = query(collection(db, 'reviews'), where('planet', '==', 'Vex'));
+		const snapshot = await getDocs(q);
 
-		return unsub;
+		reviewsData = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
 	});
 </script>
 
