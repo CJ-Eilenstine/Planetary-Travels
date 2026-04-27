@@ -24,39 +24,24 @@
 			// Set the character appearance based on the loaded profile data
 			document
 				.getElementById('eyes')
-				.setAttribute(
-					'src',
-					`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes || 1}.png`
-				);
+				.setAttribute('src', `/character/Eyes/eyes${profileData.characterData.eyes || 1}.png`);
 			document
 				.getElementById('hair')
-				.setAttribute(
-					'src',
-					`/src/lib/assets/character/Hair/hair${profileData.characterData.hair || 1}.png`
-				);
+				.setAttribute('src', `/character/Hair/hair${profileData.characterData.hair || 1}.png`);
 			document
 				.getElementById('mouth')
-				.setAttribute(
-					'src',
-					`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth || 1}.png`
-				);
+				.setAttribute('src', `/character/Mouth/mouth${profileData.characterData.mouth || 1}.png`);
 			document
 				.getElementById('nose')
-				.setAttribute(
-					'src',
-					`/src/lib/assets/character/Nose/nose${profileData.characterData.nose || 1}.png`
-				);
+				.setAttribute('src', `/character/Nose/nose${profileData.characterData.nose || 1}.png`);
 			document
 				.getElementById('body')
-				.setAttribute(
-					'src',
-					`/src/lib/assets/character/Body/body${profileData.characterData.body || 1}.png`
-				);
+				.setAttribute('src', `/character/Body/body${profileData.characterData.body || 1}.png`);
 			document
 				.getElementById('clothes')
 				.setAttribute(
 					'src',
-					`/src/lib/assets/character/Clothes/clothes${profileData.characterData.clothes || 1}.png`
+					`/character/Clothes/clothes${profileData.characterData.clothes || 1}.png`
 				);
 		}
 	}
@@ -79,7 +64,7 @@
 				} else {
 					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
 				}
-				eyesElement.setAttribute('src', `/src/lib/assets/character/Eyes/eyes${currentIndex}.png`);
+				eyesElement.setAttribute('src', `/character/Eyes/eyes${currentIndex}.png`);
 			}
 		}
 
@@ -93,7 +78,7 @@
 				} else {
 					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
 				}
-				hairElement.setAttribute('src', `/src/lib/assets/character/Hair/hair${currentIndex}.png`);
+				hairElement.setAttribute('src', `/character/Hair/hair${currentIndex}.png`);
 			}
 		}
 
@@ -107,10 +92,7 @@
 				} else {
 					currentIndex = currentIndex < 9 ? currentIndex + 1 : 1;
 				}
-				mouthElement.setAttribute(
-					'src',
-					`/src/lib/assets/character/Mouth/mouth${currentIndex}.png`
-				);
+				mouthElement.setAttribute('src', `/character/Mouth/mouth${currentIndex}.png`);
 			}
 		}
 
@@ -124,7 +106,7 @@
 				} else {
 					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
 				}
-				noseElement.setAttribute('src', `/src/lib/assets/character/Nose/nose${currentIndex}.png`);
+				noseElement.setAttribute('src', `/character/Nose/nose${currentIndex}.png`);
 			}
 		}
 
@@ -138,7 +120,7 @@
 				} else {
 					currentIndex = currentIndex < 13 ? currentIndex + 1 : 1;
 				}
-				bodyElement.setAttribute('src', `/src/lib/assets/character/Body/body${currentIndex}.png`);
+				bodyElement.setAttribute('src', `/character/Body/body${currentIndex}.png`);
 			}
 		}
 
@@ -152,10 +134,7 @@
 				} else {
 					currentIndex = currentIndex < 8 ? currentIndex + 1 : 1;
 				}
-				clothesElement.setAttribute(
-					'src',
-					`/src/lib/assets/character/Clothes/clothes${currentIndex}.png`
-				);
+				clothesElement.setAttribute('src', `/character/Clothes/clothes${currentIndex}.png`);
 			}
 		}
 	}
@@ -195,14 +174,14 @@
 	<h1>Your Appearance</h1>
 	<div class="characterEditor">
 		<div class="char">
-			<img id="hair" src="/src/lib/assets/character/Hair/hair1.png" alt="Character Hair" />
+			<img id="hair" src="/character/Hair/hair1.png" alt="Character Hair" />
 
-			<img id="eyes" src="/src/lib/assets/character/Eyes/eyes1.png" alt="Eyes" />
+			<img id="eyes" src="/character/Eyes/eyes1.png" alt="Eyes" />
 			<!-- src={`/src/lib/assets/character/Eyes/eyes${toString(profileData.characterData.eyes) || 1}.png`} -->
-			<img id="nose" src="/src/lib/assets/character/Nose/nose1.png" alt="Character Nose" />
-			<img id="mouth" src="/src/lib/assets/character/Mouth/mouth1.png" alt="Character Mouth" />
-			<img id="body" src="/src/lib/assets/character/Body/body1.png" alt="Body" />
-			<img id="clothes" src="/src/lib/assets/character/Clothes/clothes1.png" alt="Clothes" />
+			<img id="nose" src="/character/Nose/nose1.png" alt="Character Nose" />
+			<img id="mouth" src="/character/Mouth/mouth1.png" alt="Character Mouth" />
+			<img id="body" src="/character/Body/body1.png" alt="Body" />
+			<img id="clothes" src="/character/Clothes/clothes1.png" alt="Clothes" />
 		</div>
 		<h2>Click on the arrows to change your appearance.</h2>
 		<div class="charEditor">

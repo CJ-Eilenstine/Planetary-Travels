@@ -5,6 +5,10 @@
 	import { db } from '$lib/firebase/firebase.client';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import solarisGif from '$lib/assets/planets/solaris.gif';
+	import masqueradeGif from '$lib/assets/planets/masquerade.gif';
+	import vexGif from '$lib/assets/planets/vex.gif';
+	import earthGif from '$lib/assets/planets/earth.gif';
 
 	$: if ($user) {
 		loadProfile();
@@ -22,18 +26,18 @@
 			console.log('Profile data loaded:', profileData);
 
 			document.querySelector('.stamp1').style.backgroundImage = profileData.visitedEarth
-				? "url('/src/lib/assets/planets/earth.gif')"
+				? 'url(`${earthGif}`)'
 				: 'none';
 
 			document.querySelector('.stamp2').style.backgroundImage = profileData.visitedSolaris
-				? "url('/src/lib/assets/planets/solaris.gif')"
+				? 'url(`${solarisGif}`)'
 				: 'none';
 			document.querySelector('.stamp3').style.backgroundImage = profileData.visitedMasquerade
-				? "url('/src/lib/assets/planets/masquerade.gif')"
+				? 'url(`${masqueradeGif}`)'
 				: 'none';
 
 			document.querySelector('.stamp4').style.backgroundImage = profileData.visitedVex
-				? "url('/src/lib/assets/planets/vex.gif')"
+				? 'url(`${vexGif}`)'
 				: 'none';
 		}
 	}
@@ -48,27 +52,18 @@
 				<h1>Intergalactic Travel Administration</h1>
 				<div class="userInfo">
 					<div class="char">
-						<img
-							src={`/src/lib/assets/character/Hair/hair${profileData.characterData.hair}.png`}
-							alt="Hair"
-						/><img
-							src={`/src/lib/assets/character/Eyes/eyes${profileData.characterData.eyes}.png`}
+						<img src={`/character/Hair/hair${profileData.characterData.hair}.png`} alt="Hair" /><img
+							src={`/character/Eyes/eyes${profileData.characterData.eyes}.png`}
 							alt="Eyes"
 						/>
 
-						<img
-							src={`/src/lib/assets/character/Nose/nose${profileData.characterData.nose}.png`}
-							alt="Nose"
-						/><img
-							src={`/src/lib/assets/character/Mouth/mouth${profileData.characterData.mouth}.png`}
+						<img src={`/character/Nose/nose${profileData.characterData.nose}.png`} alt="Nose" /><img
+							src={`/character/Mouth/mouth${profileData.characterData.mouth}.png`}
 							alt="Mouth"
 						/>
+						<img src={`/character/Body/body${profileData.characterData.body}.png`} alt="Body" />
 						<img
-							src={`/src/lib/assets/character/Body/body${profileData.characterData.body}.png`}
-							alt="Body"
-						/>
-						<img
-							src={`/src/lib/assets/character/Clothes/clothes${profileData.characterData.clothes}.png`}
+							src={`/character/Clothes/clothes${profileData.characterData.clothes}.png`}
 							alt="Clothes"
 						/>
 					</div>
