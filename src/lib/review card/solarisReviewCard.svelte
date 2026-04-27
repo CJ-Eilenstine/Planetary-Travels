@@ -5,6 +5,7 @@
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { query, collection, onSnapshot, where, getDocs } from 'firebase/firestore';
 	import { user } from '$lib/stores/authStore';
+	import { UserIcon } from 'svelte-feather-icons';
 
 	let reviewsData = [];
 
@@ -20,7 +21,7 @@
 	{#each reviewsData as reviewsData}
 		<div id="reviewCard">
 			<div id="userReviewTop">
-				<div class="userIcon">icon</div>
+				<UserIcon />
 				<span id="reviewerName">{reviewsData.reviewer}</span>
 			</div>
 

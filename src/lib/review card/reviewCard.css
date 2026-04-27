@@ -1,7 +1,7 @@
 #reviewCard {
 	background-color: var(--secondary-color);
 	border-radius: 65px;
-	padding: 25px;
+	padding: 20px 25px;
 	color: var(--background-color);
 	display: flex;
 	flex-direction: column;
@@ -11,6 +11,11 @@
 
 	#userReviewTop {
 		display: flex;
+		margin-bottom: 5px;
+
+		#reviewerName {
+			margin-left: 5px;
+		}
 	}
 
 	#date {
