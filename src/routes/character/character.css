@@ -100,7 +100,12 @@
 	/* margin-bottom: 50px; */
 }
 
-.char img:nth-child(1) {
+.char img {
+	/* max-height: 400px; */
+	/* min-height: 350px; */
+}
+
+#hair {
 	position: absolute;
 	top: 0;
 	left: 10;
@@ -108,7 +113,7 @@
 	z-index: 71;
 }
 
-.char img:nth-child(2) {
+#eyes {
 	position: absolute;
 	top: 0;
 	left: 10;
@@ -117,7 +122,7 @@
 
 	z-index: 51;
 }
-.char img:nth-child(3) {
+#nose {
 	position: absolute;
 	top: 0;
 	left: 10;
@@ -125,7 +130,7 @@
 	height: 400px;
 	width: auto;
 }
-.char img:nth-child(4) {
+#mouth {
 	position: absolute;
 	top: 0;
 	left: 10;
@@ -134,7 +139,7 @@
 	width: auto;
 }
 
-.char img:nth-child(5) {
+#body {
 	position: absolute;
 	top: 0;
 	left: 10;
@@ -143,7 +148,7 @@
 	width: auto;
 }
 
-.char img:nth-child(6) {
+#clothes {
 	position: absolute;
 	top: 0;
 	left: 10;

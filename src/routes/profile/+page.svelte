@@ -51,20 +51,35 @@
 			{#if profileData}
 				<h1>Intergalactic Travel Administration</h1>
 				<div class="userInfo">
-					<div class="char">
-						<img src={`/character/Hair/hair${profileData.characterData.hair}.png`} alt="Hair" /><img
+					<div class="character">
+						<img
+							src={`/character/Hair/hair${profileData.characterData.hair}.png`}
+							alt="Hair"
+							class="hairImg"
+						/><img
 							src={`/character/Eyes/eyes${profileData.characterData.eyes}.png`}
 							alt="Eyes"
+							class="eyesImg"
 						/>
 
-						<img src={`/character/Nose/nose${profileData.characterData.nose}.png`} alt="Nose" /><img
+						<img
+							src={`/character/Nose/nose${profileData.characterData.nose}.png`}
+							alt="Nose"
+							class="noseImg"
+						/><img
 							src={`/character/Mouth/mouth${profileData.characterData.mouth}.png`}
 							alt="Mouth"
+							class="mouthImg"
 						/>
-						<img src={`/character/Body/body${profileData.characterData.body}.png`} alt="Body" />
+						<img
+							src={`/character/Body/body${profileData.characterData.body}.png`}
+							alt="Body"
+							class="bodyImg"
+						/>
 						<img
 							src={`/character/Clothes/clothes${profileData.characterData.clothes}.png`}
 							alt="Clothes"
+							class="clothesImg"
 						/>
 					</div>
 					<div class="info">
