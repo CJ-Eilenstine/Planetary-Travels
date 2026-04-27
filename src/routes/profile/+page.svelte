@@ -26,18 +26,18 @@
 			console.log('Profile data loaded:', profileData);
 
 			document.querySelector('.stamp1').style.backgroundImage = profileData.visitedEarth
-				? 'url(`${earthGif}`)'.replace(/\\/g, '/')
+				? `url(${earthGif})`
 				: 'none';
 
 			document.querySelector('.stamp2').style.backgroundImage = profileData.visitedSolaris
-				? 'url(`${solarisGif}`)'.replace(/\\/g, '/')
+				? `url(${solarisGif})`
 				: 'none';
 			document.querySelector('.stamp3').style.backgroundImage = profileData.visitedMasquerade
-				? 'url(`${masqueradeGif}`)'.replace(/\\/g, '/')
+				? `url(${masqueradeGif})`
 				: 'none';
 
 			document.querySelector('.stamp4').style.backgroundImage = profileData.visitedVex
-				? 'url(`${vexGif}`)'.replace(/\\/g, '/')
+				? `url(${vexGif})`
 				: 'none';
 		}
 	}
