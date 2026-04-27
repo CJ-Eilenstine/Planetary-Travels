@@ -1,4 +1,7 @@
 import solarisGif from '$lib/assets/planets/solaris.gif';
+import masqueradeGif from '$lib/assets/planets/masquerade.gif';
+import vexGif from '$lib/assets/planets/vex.gif';
+import earthGif from '$lib/assets/planets/earth.gif';
 
 export const details = [
 	{
@@ -15,7 +18,7 @@ export const details = [
 		planetName: 'Masquerade',
 		rating: '4.7',
 		price: '𝄽55,290',
-		image: '/src/lib/assets/planets/masquerade.gif',
+		image: `${masqueradeGif}`,
 		desc: 'Masquerade is goldilocks planet with luscious forests and jungles. There are a few large land masses but the majority of the planet is covered in a gorgeous blue ocean. Many creatures inhabit this planet mimicking the flora and the other creatures around them.'
 	},
 
@@ -24,7 +27,7 @@ export const details = [
 		planetName: 'Vex',
 		rating: '3.2',
 		price: '𝄽1,500',
-		image: '/src/lib/assets/planets/vex.gif',
+		image: `${vexGif}`,
 		desc: "Vex is a planet currently in an ice age and is home of the snifflers. Come see all the sniffler species before some of them go extinct. Although the majority of the planet may be frozen that doesn't mean it's not worth a visit. You can explore the snowy mountains, participate in snow activities like skiing, or you can visit the equator where it's less cold and spend time with irk snifflers the cutest and tamest of all the snifflers."
 	},
 
@@ -33,7 +36,7 @@ export const details = [
 		planetName: 'Earth',
 		rating: '1.8',
 		price: '𝄽1,893',
-		image: '/src/lib/assets/planets/earth.gif',
+		image: `${earthGif}`,
 		desc: 'Earth, .'
 	}
 ];
