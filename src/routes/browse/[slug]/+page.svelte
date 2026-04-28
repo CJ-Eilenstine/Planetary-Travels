@@ -62,7 +62,7 @@
 <main class="detailsPage">
 	<div class="detailsContainer">
 		<div class="detailsBanner">
-			<img src={data.detail.image} alt="Image of {data.detail.planetName}" />
+			<img src={data.detail.banner} alt="Image of {data.detail.planetName}" />
 		</div>
 		<h1>{data.detail.planetName}</h1>
 		<h2>{data.detail.rating}</h2>
