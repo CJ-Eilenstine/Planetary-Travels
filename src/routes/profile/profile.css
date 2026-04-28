@@ -106,11 +106,6 @@
 	margin-right: 25px;
 }
 
-.character img {
-	margin: 10px;
-	/* max-height: 350px; */
-}
-
 .hairImg {
 	position: absolute;
 	top: 0;
@@ -128,6 +123,7 @@
 
 	z-index: 51;
 }
+
 .noseImg {
 	position: absolute;
 	top: 0;
@@ -136,6 +132,7 @@
 	height: 100%;
 	width: auto;
 }
+
 .mouthImg {
 	position: absolute;
 	top: 0;
