@@ -95,13 +95,13 @@
 			}
 
 			.reviewTitle {
-				font-size: 24px;
+				font-size: 22px;
 			}
 
 			.reviewDesc {
 				height: 100px;
 				resize: vertical;
-				font-size: 22px;
+				font-size: 20px;
 			}
 
 			button {
