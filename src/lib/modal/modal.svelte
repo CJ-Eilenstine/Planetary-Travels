@@ -3,6 +3,7 @@
 	import { db } from '$lib/firebase/firebase.client.js';
 	import { doc, setDoc, updateDoc } from 'firebase/firestore';
 	import { getAuth } from 'firebase/auth';
+	import { CameraIcon } from 'svelte-feather-icons';
 
 	let { showModal = $bindable(), header, children, planetName } = $props();
 
@@ -47,7 +48,10 @@
 		{@render children?.()}
 		<!-- <hr /> -->
 		<!-- svelte-ignore a11y_autofocus -->
-		<button autofocus onclick={takePicture}>Take Picture</button>
+		<button autofocus onclick={takePicture}>
+			Take Picture
+			<CameraIcon class="feather" />
+		</button>
 	</div>
 </dialog>
 
@@ -99,5 +103,18 @@
 		border-radius: 10px;
 		cursor: pointer;
 		transition: background-color 0.3s ease;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	button:hover {
+		background-color: var(--accent-color-hover);
+		color: var(--primary-color);
+	}
+
+	:global(.feather) {
+		margin-left: 15px;
 	}
 </style>
