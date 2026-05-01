@@ -20,6 +20,7 @@
 		document.querySelector('.modalImage').src = { modalImg };
 		document.querySelector('.modalImage').alt = `Picture of ${planetName}`;
 		document.querySelector('.picBtn').style.display = 'none';
+		document.querySelector('.closeBtn').style.display = 'block';
 		// dialog.close();
 
 		const auth = getAuth();
@@ -55,6 +56,7 @@
 			Take Picture
 			<CameraIcon class="feather" />
 		</button>
+		<button class="closeBtn" onclick={() => dialog.close()}> Leave Planet </button>
 	</div>
 </dialog>
 
@@ -104,7 +106,7 @@
 	}
 
 	button {
-		display: block;
+		/* display: block; */
 		width: 200px;
 		height: 50px;
 		background-color: var(--accent-color);
@@ -121,6 +123,10 @@
 		align-items: center;
 		align-self: center;
 		margin-top: 20px;
+	}
+
+	.closeBtn {
+		display: none;
 	}
 
 	button:hover {
