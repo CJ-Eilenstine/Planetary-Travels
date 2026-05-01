@@ -25,6 +25,7 @@
 				<span id="reviewerName">{reviewsData.reviewer}</span>
 			</div>
 
+			<p id="reviewTitle">{reviewsData.reviewTitle}</p>
 			<p id="review">{reviewsData.reviewDesc}</p>
 			<!-- <p id="date">{reviewsData.createdAt}</p> -->
 		</div>
