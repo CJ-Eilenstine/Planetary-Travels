@@ -5,7 +5,7 @@
 	import { getAuth } from 'firebase/auth';
 	import { CameraIcon } from 'svelte-feather-icons';
 
-	let { showModal = $bindable(), header, children, planetName } = $props();
+	let { showModal = $bindable(), header, children, planetName, modalImg } = $props();
 
 	let dialog = $state(); // HTMLDialogElement
 
@@ -46,6 +46,7 @@
 		{@render header?.()}
 		<!-- <hr /> -->
 		{@render children?.()}
+		<img src={modalImg} alt="Planet View" />
 		<!-- <hr /> -->
 		<!-- svelte-ignore a11y_autofocus -->
 		<button autofocus onclick={takePicture}>
