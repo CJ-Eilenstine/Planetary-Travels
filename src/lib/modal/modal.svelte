@@ -47,8 +47,7 @@
 		<!-- <hr /> -->
 		{@render children?.()}
 		<img src={modalImg} alt="Planet View" />
-		<!-- <hr /> -->
-		<!-- svelte-ignore a11y_autofocus -->
+
 		<button autofocus onclick={takePicture}>
 			Take Picture
 			<CameraIcon class="feather" />
@@ -58,11 +57,15 @@
 
 <style>
 	dialog {
-		max-width: 32em;
+		max-width: 40em;
 		border-radius: 0.2em;
 		border: none;
 		padding: 0;
 		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);
@@ -113,6 +116,13 @@
 	button:hover {
 		background-color: var(--accent-color-hover);
 		color: var(--primary-color);
+	}
+
+	dialog img {
+		max-width: 100%;
+		height: auto;
+		margin-top: 1em;
+		border-radius: 0.2em;
 	}
 
 	:global(.feather) {
