@@ -5,6 +5,7 @@ import masqueradeBanner from '$lib/assets/banners/Masquerade_Banner.png';
 import vexGif from '$lib/assets/planets/vex.gif';
 import vexBanner from '$lib/assets/banners/Vex_Banner.png';
 import vexPostcard from '$lib/assets/postcards/vexPostcard.png';
+import vexPlanet from '$lib/assets/planetPics/vexPic.png';
 import earthGif from '$lib/assets/planets/earth.gif';
 
 export const details = [
@@ -36,6 +37,7 @@ export const details = [
 		image: `${vexGif}`,
 		banner: `${vexBanner}`,
 		modalImage: `${vexPostcard}`,
+		planetPic: `${vexPlanet}`,
 		desc: "Vex is a planet currently in an ice age and is home of the snifflers. Come see all the sniffler species before some of them go extinct. Although the majority of the planet may be frozen that doesn't mean it's not worth a visit. You can explore the snowy mountains, participate in snow activities like skiing, or you can visit the equator where it's less cold and spend time with irk snifflers the cutest and tamest of all the snifflers."
 	},
 

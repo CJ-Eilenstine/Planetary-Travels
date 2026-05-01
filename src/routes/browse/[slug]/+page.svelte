@@ -75,6 +75,7 @@
 		bind:showModal
 		planetName={data.detail.planetName}
 		modalImg={data.detail.modalImage}
+		planetPic={data.detail.planetPic}
 	></Modal>
 
 	<div class="reviews">
