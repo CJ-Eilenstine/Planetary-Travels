@@ -17,7 +17,7 @@
 		// alert('Picture taken!');
 		console.log('Picture taken!');
 		console.log({ planetName });
-		document.querySelector('.modalImage').src = { modalImg };
+		document.querySelector('.modalImage').src = `${modalImg}`;
 		document.querySelector('.modalImage').alt = `Picture of ${planetName}`;
 		document.querySelector('.picBtn').style.display = 'none';
 		document.querySelector('.closeBtn').style.display = 'block';
