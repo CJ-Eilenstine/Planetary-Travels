@@ -14,10 +14,13 @@
 	});
 
 	function takePicture() {
-		alert('Picture taken!');
+		// alert('Picture taken!');
 		console.log('Picture taken!');
 		console.log({ planetName });
-		dialog.close();
+		document.querySelector('.modalImage').src = { modalImg };
+		document.querySelector('.modalImage').alt = `Picture of ${planetName}`;
+		document.querySelector('.picBtn').style.display = 'none';
+		// dialog.close();
 
 		const auth = getAuth();
 		const user = auth.currentUser;
@@ -42,13 +45,13 @@
 		if (e.target === dialog) dialog.close();
 	}}
 >
-	<div>
+	<div class="modalContainer">
 		{@render header?.()}
 		<!-- <hr /> -->
 		{@render children?.()}
-		<img src={planetPic} alt="Planet View" />
+		<img class="modalImage" src={planetPic} alt="Planet View" />
 
-		<button autofocus onclick={takePicture}>
+		<button class="picBtn" autofocus onclick={takePicture}>
 			Take Picture
 			<CameraIcon class="feather" />
 		</button>
@@ -95,6 +98,11 @@
 			opacity: 1;
 		}
 	}
+	.modalContainer {
+		display: flex;
+		flex-direction: column;
+	}
+
 	button {
 		display: block;
 		width: 200px;
@@ -111,6 +119,8 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		align-self: center;
+		margin-top: 20px;
 	}
 
 	button:hover {
