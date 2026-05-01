@@ -68,7 +68,9 @@
 		<h2>{data.detail.rating}</h2>
 		<h3>{data.detail.price}</h3>
 		<p>{data.detail.desc}</p>
-		<button onclick={() => (showModal = true)}>Travel Now!!!</button>
+		{#if $user}
+			<button onclick={() => (showModal = true)}>Travel Now!!!</button>{:else}
+			<p>Please log in to visit Planets!</p>{/if}
 	</div>
 
 	<Modal
@@ -80,7 +82,10 @@
 
 	<div class="reviews">
 		<h4>Reviews</h4>
-		<button onclick={createReview}>Leave a review</button>
+
+		{#if $user}
+			<button onclick={createReview}>Leave a review</button>{:else}
+			<p>Please log in to leave a Review!</p>{/if}
 
 		<div id="userInputForm" style="display: none;">
 			<p>Tell us how your trip went.</p>
