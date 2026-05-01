@@ -21,6 +21,8 @@
 		document.querySelector('.modalImage').alt = `Picture of ${planetName}`;
 		document.querySelector('.picBtn').style.display = 'none';
 		document.querySelector('.closeBtn').style.display = 'block';
+		document.querySelector('.modalImage').style.boxShadow = '-1px 7px 16px 5px rgba(0,0,0,0.72)';
+
 		// dialog.close();
 
 		const auth = getAuth();
