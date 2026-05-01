@@ -71,7 +71,7 @@
 		<button onclick={() => (showModal = true)}>Travel Now!!!</button>
 	</div>
 
-	<Modal bind:showModal planetName={data.detail.planetName} modalImg={data.detail.banner}>
+	<Modal bind:showModal planetName={data.detail.planetName} modalImg={data.detail.modalImage}>
 		<div class="postCard"></div>
 	</Modal>
 
