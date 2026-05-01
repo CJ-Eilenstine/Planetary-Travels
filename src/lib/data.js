@@ -49,6 +49,6 @@ export const details = [
 		price: '𝄽1,893',
 		image: `${earthGif}`,
 		banner: `${earthBanner}`,
-		desc: 'Earth, a planet with a  .'
+		desc: "Earth, a planet with a large variety of flora and fauna. Visit this planets snowy mountains, rainy forests, or sunny beaches. Don't want to be on land, well you're in luck Earth has many large bodies of water and a vast ocean to explore."
 	}
 ];
