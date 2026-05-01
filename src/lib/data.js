@@ -45,6 +45,6 @@ export const details = [
 		rating: '1.8',
 		price: '𝄽1,893',
 		image: `${earthGif}`,
-		desc: 'Earth, .'
+		desc: 'Earth, a planet with a  .'
 	}
 ];
