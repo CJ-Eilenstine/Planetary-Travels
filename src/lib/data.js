@@ -1,5 +1,7 @@
 import solarisGif from '$lib/assets/planets/solaris.gif';
 import solarisBanner from '$lib/assets/banners/Solaris_Banner.png';
+import solarisPostcard from '$lib/assets/postcards/solarisPostcard.png';
+import solarisPlanet from '$lib/assets/planetPics/solarisPic.png';
 import masqueradeGif from '$lib/assets/planets/masquerade.gif';
 import masqueradeBanner from '$lib/assets/banners/Masquerade_Banner.png';
 import vexGif from '$lib/assets/planets/vex.gif';
@@ -17,6 +19,8 @@ export const details = [
 		price: '𝄽1,253',
 		image: `${solarisGif}`,
 		banner: `${solarisBanner}`,
+		modalImage: `${solarisPostcard}`,
+		planetPic: `${solarisPlanet}`,
 		desc: "Solaris, a planet mostly covered by a 700 billion tons sentient gelatinous ocean. Come see tall extensors, complex shaped symmetriads, and mimoids that extrude masses of plasma that mimic the shapes of other things from clouds to human made object. Catch a peek of these temporary structures before they dissolve back into the ocean. Maybe you'll even see some rare free floating independents that detach themselves from the surface of Solaris. Be aware that there is no oxygen and Solaris' atmosphere is considered very toxic."
 	},
 
