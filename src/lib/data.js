@@ -7,6 +7,7 @@ import vexBanner from '$lib/assets/banners/Vex_Banner.png';
 import vexPostcard from '$lib/assets/postcards/vexPostcard.png';
 import vexPlanet from '$lib/assets/planetPics/vexPic.png';
 import earthGif from '$lib/assets/planets/earth.gif';
+import earthBanner from '$lib/assets/banners/Earth_Banner.png';
 
 export const details = [
 	{
@@ -47,6 +48,7 @@ export const details = [
 		rating: '1.8',
 		price: '𝄽1,893',
 		image: `${earthGif}`,
+		banner: `${earthBanner}`,
 		desc: 'Earth, a planet with a  .'
 	}
 ];
